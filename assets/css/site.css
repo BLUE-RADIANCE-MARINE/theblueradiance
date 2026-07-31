@@ -112,14 +112,15 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 
 /* Ghost numeral watermark */
 .ghost-no{
-  position:absolute;top:-.34em;right:0;
+  position:absolute;top:-.28em;right:0;
+  width:max-content;                 /* else the grid stretches it and the digits drift left */
   font-family:var(--font-display);font-weight:700;
-  font-size:clamp(6rem,13vw,12rem);line-height:1;
-  letter-spacing:-.05em;color:var(--line-soft);
+  font-size:clamp(4.4rem,9.5vw,8.6rem);line-height:1;
+  letter-spacing:-.05em;color:rgba(46,139,255,.16);
   pointer-events:none;user-select:none;z-index:0;
 }
-.on-dark .ghost-no,.on-deep .ghost-no{color:rgba(230,238,246,.045)}
-.sec-head > *{position:relative;z-index:1}
+.on-dark .ghost-no,.on-deep .ghost-no{color:rgba(127,182,255,.13)}
+.sec-head > *:not(.ghost-no){position:relative;z-index:1}
 
 .hairline{border:none;border-top:1px solid var(--line)}
 .on-dark .hairline,.on-deep .hairline{border-top-color:var(--line-d)}
