@@ -255,8 +255,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 }
 .mobile-menu a .idx{font-size:.72rem;font-weight:500;color:var(--azure);letter-spacing:.14em}
 .mobile-menu a.active{color:var(--azure-lt)}
-.mobile-menu-foot{display:grid;gap:7px;color:var(--fog-dim);font-size:.88rem;padding-top:28px}
-.mobile-menu-foot a{color:var(--fog);text-decoration:none;font-size:.95rem}
+.mobile-menu-foot{display:grid;gap:2px;color:var(--fog-dim);font-size:.88rem;padding-top:26px}
+.mobile-menu-foot a{display:inline-block;padding-block:6px;color:var(--fog);text-decoration:none;font-size:.95rem}
 
 /* ---------- Hero ---------- */
 
@@ -389,6 +389,40 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 .svc-grid.is-flagship{grid-template-columns:repeat(2,1fr)}
 .svc-grid.is-flagship .svc-cell{padding:clamp(32px,4vw,58px);gap:16px}
 .svc-grid.is-flagship h3{font-size:clamp(1.4rem,2.2vw,1.85rem)}
+
+/* Additional services — deliberately one register quieter than core */
+.addl-head{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 22px;
+  margin-top:clamp(44px,5vw,72px);margin-bottom:20px;
+}
+.addl-note{font-size:.92rem;color:var(--fog-dim)}
+.on-light .addl-note{color:var(--muted)}
+.svc-grid.is-addl{grid-template-columns:repeat(2,1fr)}
+.svc-grid.is-addl .svc-cell{padding:clamp(22px,2.4vw,34px);gap:10px}
+.svc-grid.is-addl h3{font-size:1.05rem}
+.svc-grid.is-addl p{font-size:.9rem}
+
+/* Flagship facets — chartering / management as two faces of one service */
+.split-facets{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,44px);
+  width:100%;border-top:1px solid var(--line);padding-top:clamp(20px,2.4vw,28px);margin-top:4px;
+}
+.on-dark .split-facets{border-top-color:var(--line-d)}
+.facet{display:grid;gap:12px;align-content:start}
+.facet-k{
+  font-family:var(--font-display);font-size:.72rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--azure);
+}
+.on-dark .facet-k{color:var(--azure-lt)}
+.facet ul{list-style:none;display:grid;gap:0;border-top:0}
+.facet li{
+  display:flex;gap:12px;align-items:baseline;
+  color:var(--muted);font-size:.95rem;line-height:1.55;
+  padding-block:10px;border-bottom:1px solid var(--line);
+}
+.on-dark .facet li{color:var(--fog);border-bottom-color:var(--line-d)}
+.facet li::before{content:'';flex:none;width:10px;height:1px;background:var(--azure);transform:translateY(-4px)}
+.facet .link-arrow{font-size:.9rem;margin-top:4px}
 
 /* ---------- Checklist matrix (charter types, deliverables) ---------- */
 
@@ -648,9 +682,10 @@ footer.site-foot{background:var(--deep);color:#fff}
 .foot-brand .brand-mark{width:44px;height:44px;border-color:rgba(255,255,255,.28)}
 .foot-tag{color:var(--fog-dim);font-size:.94rem;line-height:1.75;max-width:36ch}
 .foot-motto{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.02rem;color:var(--fog);letter-spacing:-.005em}
-.foot-col h4{font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--fog-dim);margin-bottom:18px}
-.foot-col ul{list-style:none;display:grid;gap:10px}
-.foot-col a{color:var(--fog);text-decoration:none;font-size:.94rem;transition:color .3s ease}
+.foot-col .foot-h{font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--fog-dim);margin-bottom:18px;line-height:1.4}
+.foot-col ul{list-style:none;display:grid;gap:2px}
+/* padding keeps tap targets at/above the 24px minimum without changing rhythm */
+.foot-col a{display:inline-block;padding-block:5px;color:var(--fog);text-decoration:none;font-size:.94rem;transition:color .3s ease}
 .foot-col a:hover{color:#fff}
 .foot-col address{font-style:normal;color:var(--fog);font-size:.94rem;line-height:1.82}
 .foot-bar{
@@ -699,6 +734,9 @@ footer.site-foot{background:var(--deep);color:#fff}
   .flagship.is-flip .fl-media{order:0}
   .fl-media .frame,.fl-media .frame.portrait{aspect-ratio:3/2.1}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .split-facets{grid-template-columns:1fr;gap:0}
+  .facet + .facet{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+  .on-dark .facet + .facet{border-top-color:var(--line-d)}
   .val-grid{grid-template-columns:repeat(2,1fr)}
   .vmv{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
@@ -715,7 +753,7 @@ footer.site-foot{background:var(--deep);color:#fff}
 
 @media (max-width:720px){
   .hero-stats-grid{grid-template-columns:1fr 1fr;gap:16px;padding-block:16px}
-  .svc-grid,.svc-grid.is-flagship{grid-template-columns:1fr}
+  .svc-grid,.svc-grid.is-flagship,.svc-grid.is-addl{grid-template-columns:1fr}
   .val-grid{grid-template-columns:1fr}
   .stat-strip{grid-template-columns:1fr;gap:28px}
   .form-row{grid-template-columns:1fr}
