@@ -4,14 +4,25 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ----- Navigation: solid state on scroll ----- */
+  /* ----- Navigation: solid state + read progress ----- */
   var nav = document.querySelector('.nav');
-  if (nav && !nav.classList.contains('is-solid')) {
-    var onScroll = function () {
-      nav.classList.toggle('is-scrolled', window.scrollY > 24);
+  if (nav) {
+    var progress = nav.querySelector('.nav-progress');
+    var ticking = false;
+    var update = function () {
+      if (!nav.classList.contains('is-solid')) {
+        nav.classList.toggle('is-scrolled', window.scrollY > 24);
+      }
+      if (progress) {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+      }
+      ticking = false;
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
   }
 
   /* ----- Mobile menu ----- */
