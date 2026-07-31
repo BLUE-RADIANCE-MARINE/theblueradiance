@@ -1,938 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Vessel Chartering &amp; Management, Saudi Arabia | Blue Radiance Marine</title>
+    <meta name="description" content="Saudi-registered marine services provider in Al Khobar. Offshore support vessels supplied on charter and operated under full management.">
+    <link rel="canonical" href="https://theblueradiance.com/">
 
-    <meta name="description"
-        content="Blue Radiance Marine Company - Marine & Offshore Services in Saudi Arabia">
-
-    <title>
-        Blue Radiance Marine Company
-    </title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Blue Radiance Marine Company">
+    <meta property="og:title" content="Vessel Chartering &amp; Vessel Management in Saudi Arabia">
+    <meta property="og:description" content="Offshore support vessels supplied on charter and operated under full management. Al Khobar, Eastern Province — operations answered around the clock.">
+    <meta property="og:url" content="https://theblueradiance.com/">
+    <meta property="og:image" content="https://theblueradiance.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vessel Chartering &amp; Vessel Management in Saudi Arabia">
+    <meta name="twitter:description" content="Offshore support vessels supplied on charter and operated under full management. Al Khobar, Eastern Province.">
+    <meta name="twitter:image" content="https://theblueradiance.com/images/og-image.jpg">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500..700;1,500&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+    <link rel="preload" as="image" href="images/hero-offshore-vessel.jpg" imagesrcset="images/hero-offshore-vessel-sm.jpg 1000w, images/hero-offshore-vessel.jpg 2000w" imagesizes="100vw">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <script>document.documentElement.className+=' js';</script>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/site.js" defer></script>
 
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://theblueradiance.com/#org",
+          "name": "Blue Radiance Marine Company",
+          "url": "https://theblueradiance.com/",
+          "logo": "https://theblueradiance.com/images/Img.PNG",
+          "foundingDate": "2026",
+          "slogan": "Delivering excellence, every time.",
+          "email": "operations@theblueradiance.com",
+          "telephone": "+966136633697",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Building No. 3665, Street 4B, Ar Rakah Ash Shamaliyah District",
+            "addressLocality": "Al Khobar",
+            "postalCode": "34225",
+            "addressRegion": "Eastern Province",
+            "addressCountry": "SA"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://theblueradiance.com/#business",
+          "name": "Blue Radiance Marine Company",
+          "parentOrganization": { "@id": "https://theblueradiance.com/#org" },
+          "url": "https://theblueradiance.com/",
+          "image": "https://theblueradiance.com/images/og-image.jpg",
+          "telephone": "+966136633697",
+          "email": "operations@theblueradiance.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Building No. 3665, Street 4B, Ar Rakah Ash Shamaliyah District",
+            "addressLocality": "Al Khobar",
+            "postalCode": "34225",
+            "addressCountry": "SA"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 26.361759, "longitude": 50.194994 },
+          "areaServed": ["Dammam", "Ras Tanura", "Jubail", "Tanajib", "Khafji", "Arabian Gulf"],
+          "makesOffer": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vessel Chartering" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vessel Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Offshore Construction & Commissioning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marine Procurement" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Equipment Supply" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Offshore Personnel Supply" } }
+          ]
         }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-            background:#fff;
-            overflow-x:hidden;
-        }
-
-        img{
-            max-width:100%;
-            display:block;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .navbar{
-
-            width:100%;
-            position:fixed;
-            top:0;
-            left:0;
-            z-index:999;
-
-            padding:18px 7%;
-
-            background:rgba(5,12,30,0.93);
-
-            backdrop-filter:blur(10px);
-
-        }
-
-        .nav-container{
-
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-
-        }
-
-        .logo{
-
-            display:flex;
-            align-items:center;
-            gap:14px;
-
-            text-decoration:none;
-            color:#fff;
-
-        }
-
-        .logo img{
-
-            width:55px;
-            height:55px;
-
-            border-radius:50%;
-
-            object-fit:cover;
-
-            background:#fff;
-
-        }
-
-        .logo-text{
-
-            font-size:1.3rem;
-            font-weight:700;
-            line-height:1.3;
-
-        }
-
-        .nav-menu{
-
-            display:flex;
-            gap:35px;
-            list-style:none;
-
-        }
-
-        .nav-menu a{
-
-            color:#fff;
-            text-decoration:none;
-            font-weight:600;
-            transition:0.3s;
-            position:relative;
-
-        }
-
-        .nav-menu a:hover{
-
-            color:#3eb8ff;
-
-        }
-
-        /* Active state styles */
-        .nav-menu a.active{
-
-            color:#0099ff;
-            font-weight:700;
-
-        }
-
-        .nav-menu a.active::after{
-
-            content:'';
-            position:absolute;
-            bottom:-8px;
-            left:0;
-            right:0;
-            height:3px;
-            background:linear-gradient(90deg, #0099ff, #00d4ff);
-            border-radius:2px;
-            box-shadow:0 0 12px rgba(0, 153, 255, 0.6);
-            animation:glowUnderline 0.6s ease-out;
-
-        }
-
-        @keyframes glowUnderline{
-
-            from{
-
-                width:0;
-                left:50%;
-
-            }
-
-            to{
-
-                width:100%;
-                left:0;
-
-            }
-
-        }
-
-        /* =========================
-           HERO SECTION
-        ========================= */
-
-        .hero{
-
-            min-height:100vh;
-
-            background:
-            linear-gradient(
-            rgba(0,0,0,0.60),
-            rgba(0,0,0,0.65)
-            ),
-            url('images/ship.jpg');
-
-            background-size:cover;
-            background-position:center;
-            background-repeat:no-repeat;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            text-align:center;
-
-            color:#fff;
-
-            padding:120px 7% 80px;
-
-        }
-
-        .hero-content{
-
-            max-width:1000px;
-
-            animation:fadeUp 1.2s ease;
-
-        }
-
-        .hero-content h1{
-
-            font-size:4.6rem;
-            line-height:1.2;
-            margin-bottom:25px;
-            font-weight:800;
-
-        }
-
-        .hero-content p{
-
-            font-size:1.2rem;
-            line-height:1.9;
-
-            color:rgba(255,255,255,0.92);
-
-            margin-bottom:45px;
-
-        }
-
-        .hero-buttons{
-
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-
-        }
-
-        .btn{
-
-            padding:16px 34px;
-
-            border-radius:12px;
-
-            text-decoration:none;
-
-            font-weight:600;
-
-            transition:0.3s;
-
-            display:inline-block;
-
-        }
-
-        .btn-primary{
-
-            background:#008cff;
-            color:#fff;
-
-        }
-
-        .btn-primary:hover{
-
-            background:#0070cc;
-            transform:translateY(-5px);
-
-        }
-
-        .btn-secondary{
-
-            border:2px solid rgba(255,255,255,0.75);
-            color:#fff;
-
-        }
-
-        .btn-secondary:hover{
-
-            background:#fff;
-            color:#000;
-
-        }
-
-        /* =========================
-           ABOUT PREVIEW
-        ========================= */
-
-        .about-preview{
-
-            padding:110px 7%;
-            background:#f5f9ff;
-
-        }
-
-        .section-title{
-
-            text-align:center;
-
-            font-size:3rem;
-
-            color:#081426;
-
-            margin-bottom:20px;
-
-        }
-
-        .section-subtitle{
-
-            text-align:center;
-
-            max-width:900px;
-
-            margin:auto;
-
-            color:#666;
-
-            line-height:1.9;
-
-            margin-bottom:70px;
-
-        }
-
-        .about-grid{
-
-            display:grid;
-
-            grid-template-columns:
-            repeat(auto-fit,minmax(260px,1fr));
-
-            gap:30px;
-
-        }
-
-        .about-box{
-
-            background:#fff;
-
-            padding:40px 30px;
-
-            border-radius:22px;
-
-            box-shadow:
-            0 10px 35px rgba(0,0,0,0.08);
-
-            transition:0.4s;
-
-            text-align:center;
-
-        }
-
-        .about-box:hover{
-
-            transform:translateY(-10px);
-
-        }
-
-        .about-box h3{
-
-            font-size:1.4rem;
-
-            margin-bottom:18px;
-
-            color:#081426;
-
-        }
-
-        .about-box p{
-
-            color:#666;
-
-            line-height:1.9;
-
-        }
-
-        /* =========================
-           WHY CHOOSE US
-        ========================= */
-
-        .why-us{
-
-            padding:110px 7%;
-
-            background:#081426;
-
-            color:#fff;
-
-        }
-
-        .why-grid{
-
-            margin-top:60px;
-
-            display:grid;
-
-            grid-template-columns:
-            repeat(auto-fit,minmax(240px,1fr));
-
-            gap:30px;
-
-        }
-
-        .why-box{
-
-            background:
-            rgba(255,255,255,0.05);
-
-            padding:40px 30px;
-
-            border-radius:20px;
-
-            border:
-            1px solid rgba(255,255,255,0.08);
-
-        }
-
-        .why-box h3{
-
-            margin-bottom:18px;
-            font-size:1.5rem;
-
-        }
-
-        .why-box p{
-
-            line-height:1.9;
-            color:rgba(255,255,255,0.82);
-
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta{
-
-            padding:110px 7%;
-
-            text-align:center;
-
-            background:
-            linear-gradient(
-            rgba(0,0,0,0.72),
-            rgba(0,0,0,0.72)
-            ),
-            url('images/whatsapp2.jpg');
-
-            background-size:cover;
-            background-position:center;
-
-            color:#fff;
-
-        }
-
-        .cta h2{
-
-            font-size:3.3rem;
-            margin-bottom:20px;
-
-        }
-
-        .cta p{
-
-            max-width:850px;
-
-            margin:auto;
-
-            line-height:1.9;
-
-            margin-bottom:40px;
-
-            color:rgba(255,255,255,0.88);
-
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer{
-
-            background:#050d18;
-
-            color:#fff;
-
-            text-align:center;
-
-            padding:35px 7%;
-
-        }
-
-        footer p{
-
-            color:rgba(255,255,255,0.7);
-
-        }
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        @keyframes fadeUp{
-
-            from{
-
-                opacity:0;
-                transform:translateY(60px);
-
-            }
-
-            to{
-
-                opacity:1;
-                transform:translateY(0);
-
-            }
-
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width:992px){
-
-            .hero-content h1{
-
-                font-size:3.5rem;
-
-            }
-
-        }
-
-        @media(max-width:768px){
-
-            .navbar{
-
-                padding:15px 4%;
-
-            }
-
-            .nav-container{
-
-                flex-direction:column;
-                gap:16px;
-
-            }
-
-            .logo{
-
-                width:100%;
-                justify-content:center;
-                text-align:left;
-
-            }
-
-            .logo img{
-
-                width:52px;
-                height:52px;
-
-            }
-
-            .logo-text{
-
-                font-size:1rem;
-                line-height:1.3;
-                max-width:220px;
-
-            }
-
-            .nav-menu{
-
-                gap:18px;
-                flex-wrap:wrap;
-                justify-content:center;
-
-            }
-
-            .nav-menu a.active::after{
-
-                bottom:-5px;
-                height:2px;
-
-            }
-
-            .hero{
-
-                padding-top:170px;
-
-            }
-
-            .hero-content h1{
-
-                font-size:2.5rem;
-
-            }
-
-            .hero-content p{
-
-                font-size:1rem;
-
-            }
-
-            .section-title{
-
-                font-size:2.2rem;
-
-            }
-
-            .cta h2{
-
-                font-size:2.3rem;
-
-            }
-
-        }
-
-    </style>
-
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav class="navbar">
-
-        <div class="nav-container">
-
-            <a href="index.html"
-                class="logo">
-
-                <img src="images/Img.PNG"
-                    alt="Blue Radiance Logo">
-
-                <span class="logo-text">
-
-                    Blue Radiance Marine Company
-
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="Blue Radiance Marine Company — home">
+                <span class="brand-mark" aria-hidden="true">BR</span>
+                <span class="brand-name">
+                    <span class="t">BLUE RADIANCE</span>
+                    <span class="s">Marine Company</span>
                 </span>
-
             </a>
-
-            <ul class="nav-menu">
-
-                <li>
-                    <a href="index.html" class="active">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="services.html">
-                        Services
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
+            <nav aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="vessel-chartering.html">Chartering &amp; Management</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="company-profile.html">Company Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="btn nav-cta" href="contact.html?service=Vessel%20Chartering"><span>Charter a Vessel</span></a></li>
+                </ul>
+            </nav>
+            <button class="nav-burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+        <div class="nav-progress" aria-hidden="true"></div>
+    </header>
 
-    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li style="--i:0"><a href="index.html" class="active"><span class="idx">01</span>Home</a></li>
+            <li style="--i:1"><a href="vessel-chartering.html"><span class="idx">02</span>Chartering &amp; Management</a></li>
+            <li style="--i:2"><a href="services.html"><span class="idx">03</span>Services</a></li>
+            <li style="--i:3"><a href="about.html"><span class="idx">04</span>About</a></li>
+            <li style="--i:4"><a href="company-profile.html"><span class="idx">05</span>Company Profile</a></li>
+            <li style="--i:5"><a href="contact.html"><span class="idx">06</span>Contact</a></li>
+        </ul>
+        <div class="mobile-menu-foot">
+            <a href="tel:+966136633697">+966 13 663 3697</a>
+            <a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a>
+            <span>Al Khobar · Eastern Province · Kingdom of Saudi Arabia</span>
+        </div>
+    </div>
+
+    <main id="main">
 
     <!-- HERO -->
+    <section class="hero kenburns" aria-label="Introduction">
+        <div class="hero-media">
+            <img src="images/hero-offshore-vessel.jpg"
+                 srcset="images/hero-offshore-vessel-sm.jpg 1000w, images/hero-offshore-vessel.jpg 2000w"
+                 sizes="100vw" width="2000" height="1333"
+                 alt="Anchor handling tug supply vessel underway at sea, seen from the air"
+                 fetchpriority="high">
+        </div>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
 
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h1>
-
-                Marine &
-                Offshore Solutions
-                You Can Trust
-
+        <div class="shell hero-content">
+            <p class="kicker">Marine &amp; Offshore Services · Est. 2026 · Al Khobar, KSA</p>
+            <h1 class="display-1 hero-title">
+                <span class="ln"><span>Vessel Chartering</span></span>
+                <span class="ln"><span class="accent">&amp; Vessel Management.</span></span>
             </h1>
-
-            <p>
-
-                Blue Radiance Marine Company delivers reliable offshore support,
-                marine logistics, vessel coordination and maritime operational
-                solutions across Saudi Arabia with professionalism and safety.
-
+            <p class="hero-sub">
+                Offshore support vessels supplied to owners, operators and contractors —
+                and operated under full technical, crewing and compliance responsibility.
             </p>
-
-            <div class="hero-buttons">
-
-                <a href="services.html"
-                    class="btn btn-primary">
-
-                    Explore Services
-
-                </a>
-
-                <a href="contact.html"
-                    class="btn btn-secondary">
-
-                    Contact Us
-
-                </a>
-
+            <div class="hero-actions">
+                <a class="btn" href="contact.html?service=Vessel%20Chartering"><span>Charter a Vessel</span> <span class="arr">→</span></a>
+                <a class="btn btn-ghost" href="company-profile.html"><span>View Company Profile</span></a>
             </div>
-
+            <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
         </div>
 
+        <div class="hero-stats">
+            <div class="shell hero-stats-grid">
+                <div class="hstat"><span class="v">24 / 7</span><span class="l">Operational Support</span></div>
+                <div class="hstat"><span class="v">Al Khobar</span><span class="l">Eastern Province Base</span></div>
+                <div class="hstat"><span class="v">CR 7052455537</span><span class="l">Saudi-Registered</span></div>
+                <div class="hstat"><span class="v">Arabian Gulf</span><span class="l">Area of Operation</span></div>
+            </div>
+        </div>
     </section>
 
-    <!-- ABOUT PREVIEW -->
-
-    <section class="about-preview">
-
-        <h2 class="section-title">
-
-            Trusted Marine Operations Partner
-
-        </h2>
-
-        <p class="section-subtitle">
-
-            Blue Radiance Marine Company supports offshore and industrial marine
-            operations with professional coordination, operational efficiency
-            and reliable maritime solutions across Saudi Arabia.
-
-        </p>
-
-        <div class="about-grid">
-
-            <div class="about-box">
-
-                <h3>
-
-                    Offshore Operations
-
-                </h3>
-
-                <p>
-
-                    Professional operational support services
-                    for offshore marine activities and projects.
-
+    <!-- 01 · CORE BUSINESS -->
+    <section class="section" aria-labelledby="core-title">
+        <div class="shell">
+            <div class="sec-head reveal">
+                <span class="ghost-no" aria-hidden="true">01</span>
+                <p class="kicker">Our Core Business</p>
+                <h2 id="core-title" class="display-2">Our flagship service.<br>Everything else supports it.</h2>
+                <p class="lede">
+                    Blue Radiance is a Saudi-registered marine services provider headquartered
+                    in Al Khobar. Our core business is vessel chartering and vessel management.
+                    Around that core we deliver construction, procurement, equipment and personnel —
+                    contracted as one accountable scope or as individual work packages.
                 </p>
-
             </div>
 
-            <div class="about-box">
-
-                <h3>
-
-                    Vessel Coordination
-
-                </h3>
-
-                <p>
-
-                    Smooth coordination and support for vessel
-                    movement and port operational activities.
-
-                </p>
-
-            </div>
-
-            <div class="about-box">
-
-                <h3>
-
-                    Marine Support
-
-                </h3>
-
-                <p>
-
-                    Reliable maritime operational assistance
-                    focused on safety and efficiency.
-
-                </p>
-
-            </div>
-
+            <article class="flagship">
+                <div class="fl-media media-reveal reveal">
+                    <div class="frame portrait">
+                        <img src="images/gulf-jackup-helideck.jpg"
+                             alt="Jack-up unit with helideck standing over the Arabian Gulf, attended by a tug and cargo barge"
+                             loading="lazy" width="1600" height="2401">
+                        <span class="corner" aria-hidden="true"></span>
+                    </div>
+                    <span class="tag">Core Service · 01</span>
+                </div>
+                <div class="fl-copy">
+                    <span class="num reveal" style="--i:0">Core Service 01</span>
+                    <h3 class="display-2 reveal" style="--i:1">Vessel Chartering &amp;<br>Vessel Management</h3>
+                    <p class="reveal" style="--i:2;color:var(--muted)">
+                        Offshore support vessels supplied on charter and operated under full
+                        management — crewed, maintained, certified and coordinated to the
+                        requirements of the work. Chartered or fully managed, the vessel stays
+                        our responsibility until the scope is complete.
+                    </p>
+                    <div class="split-facets">
+                        <div class="facet reveal" style="--i:3">
+                            <span class="facet-k">Chartering</span>
+                            <ul>
+                                <li>Time, bareboat, spot &amp; short-term charter</li>
+                                <li>Crew boat, PSV &amp; offshore support vessel charter</li>
+                                <li>AHTS, tug, barge &amp; workboat charter</li>
+                            </ul>
+                            <a class="link-arrow" href="vessel-chartering.html">Chartering detail <span class="arr">→</span></a>
+                        </div>
+                        <div class="facet reveal" style="--i:4">
+                            <span class="facet-k">Management</span>
+                            <ul>
+                                <li>Vessel operations &amp; technical management</li>
+                                <li>Crew management &amp; marine compliance</li>
+                                <li>Voyage, fleet &amp; offshore logistics</li>
+                            </ul>
+                            <a class="link-arrow" href="vessel-management.html">Management detail <span class="arr">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-
     </section>
 
-    <!-- WHY CHOOSE US -->
-
-    <section class="why-us">
-
-        <h2 class="section-title"
-            style="color:#fff;">
-
-            Why Choose Blue Radiance
-
-        </h2>
-
-        <p class="section-subtitle"
-            style="color:rgba(255,255,255,0.75);">
-
-            We focus on operational reliability, safety,
-            professional service delivery and efficient marine
-            support solutions tailored to client requirements.
-
-        </p>
-
-        <div class="why-grid">
-
-            <div class="why-box">
-
-                <h3>
-
-                    24/7 Operational Support
-
-                </h3>
-
-                <p>
-
-                    Continuous support for offshore and maritime
-                    operational requirements.
-
+    <!-- 02 · CORE + ADDITIONAL SERVICES -->
+    <section class="section on-dark" aria-labelledby="support-title">
+        <div class="shell">
+            <div class="sec-head reveal">
+                <span class="ghost-no" aria-hidden="true">02</span>
+                <p class="kicker">Core Services</p>
+                <h2 id="support-title" class="display-2">Built around the vessel.</h2>
+                <p class="lede">
+                    Four further core service lines that keep chartered and managed vessels
+                    working — available within one contract or as standalone packages.
                 </p>
-
             </div>
 
-            <div class="why-box">
-
-                <h3>
-
-                    Professional Team
-
-                </h3>
-
-                <p>
-
-                    Dedicated marine professionals focused on
-                    reliable and efficient service delivery.
-
-                </p>
-
+            <div class="svc-grid">
+                <a class="svc-cell reveal" style="--i:0" href="services.html#offshore-construction">
+                    <span class="idx">Core 02</span>
+                    <h3>Offshore Construction &amp; Commissioning</h3>
+                    <p>Hook-up, installation and commissioning support, plus onshore EPC works — crews, equipment and supervision managed to programme.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
+                <a class="svc-cell reveal" style="--i:1" href="services.html#marine-procurement">
+                    <span class="idx">Core 03</span>
+                    <h3>Marine Procurement</h3>
+                    <p>Marine materials, machinery spares and contingency procurement through a vetted local and international supplier network.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
+                <a class="svc-cell reveal" style="--i:2" href="services.html#equipment-supply">
+                    <span class="idx">Core 04</span>
+                    <h3>Equipment Supply</h3>
+                    <p>Cranes, generators, welding machines, compressors and test instruments — supplied to site, vessel or yard, maintained and certified.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
+                <a class="svc-cell reveal" style="--i:3" href="services.html#offshore-personnel">
+                    <span class="idx">Core 05</span>
+                    <h3>Offshore Personnel Supply</h3>
+                    <p>Certified welders, riggers, operators, QC inspectors and HSE crew, mobilised to your requirements and schedule.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
             </div>
 
-            <div class="why-box">
-
-                <h3>
-
-                    Safety Focused Operations
-
-                </h3>
-
-                <p>
-
-                    Safety and operational excellence remain
-                    our highest priorities.
-
-                </p>
-
+            <div class="addl-head reveal">
+                <p class="kicker">Additional Marine Services</p>
+                <p class="addl-note">Further capability available alongside any core scope.</p>
             </div>
-
-            <div class="why-box">
-
-                <h3>
-
-                    Saudi Arabia Based
-
-                </h3>
-
-                <p>
-
-                    Supporting marine and offshore operations
-                    across Saudi Arabia.
-
-                </p>
-
+            <div class="svc-grid is-addl">
+                <a class="svc-cell reveal" style="--i:0" href="services.html#ship-agency">
+                    <h3>Ship Agency</h3>
+                    <p>Port call coordination and agency support across the ports and terminals of the Eastern Province.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
+                <a class="svc-cell reveal" style="--i:1" href="services.html#marine-logistics">
+                    <h3>Marine Logistics</h3>
+                    <p>Vessel supply, crew movement and specialised marine logistics, extended through our operational partner network.</p>
+                    <span class="arr" aria-hidden="true">→</span>
+                </a>
             </div>
-
         </div>
+    </section>
 
+    <!-- 03 · COMPANY PROFILE -->
+    <section class="section on-deep" aria-labelledby="profile-title">
+        <div class="shell">
+            <div class="profile-layout">
+                <div class="profile-cover reveal">
+                    <div class="sheet">
+                        <img src="images/profile-cover.jpg"
+                             alt="Cover of the Blue Radiance Marine Company Corporate Profile 2026"
+                             loading="lazy" width="800" height="1035">
+                        <span class="spine" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="sec-head reveal" style="margin-bottom:26px">
+                        <span class="ghost-no" aria-hidden="true">03</span>
+                        <p class="kicker">Corporate Profile · 2026</p>
+                        <h2 id="profile-title" class="display-2">The company,<br>on the record.</h2>
+                        <p class="lede">
+                            Eighteen pages covering who we are, what we deliver and how we
+                            operate — services, sectors, HSE, quality, credentials and
+                            regional coverage. Read it before the first meeting.
+                        </p>
+                    </div>
+                    <ul class="profile-contents reveal">
+                        <li><span class="n">01</span> About the Company</li>
+                        <li><span class="n">04</span> Our Services — five integrated lines</li>
+                        <li><span class="n">06</span> Health, Safety &amp; Environment</li>
+                        <li><span class="n">08</span> Company Snapshot &amp; Credentials</li>
+                    </ul>
+                    <div class="profile-actions reveal" style="margin-top:28px">
+                        <a class="btn" href="company-profile.html"><span>View Company Profile</span> <span class="arr">→</span></a>
+                        <a class="btn btn-ghost" href="documents/Blue-Radiance-Marine-Company-Profile-2026.pdf" download>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
+                    <p class="profile-meta reveal"><span>PDF · 18 pages</span><span>Corporate Profile 2026</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 · WHY BLUE RADIANCE -->
+    <section class="section" aria-labelledby="why-title">
+        <div class="shell">
+            <div class="sec-head reveal">
+                <span class="ghost-no" aria-hidden="true">04</span>
+                <p class="kicker">Our Competitive Edge</p>
+                <h2 id="why-title" class="display-2">Six reasons clients<br>trust our team.</h2>
+            </div>
+
+            <div class="detail-list">
+                <div class="detail-row reveal">
+                    <span class="no">01</span>
+                    <h3>Chartering &amp; Management at the Core</h3>
+                    <p>Vessel chartering and full vessel management, supported by construction, procurement, equipment and manpower under one contract.</p>
+                </div>
+                <div class="detail-row reveal">
+                    <span class="no">02</span>
+                    <h3>24/7 Operational Support</h3>
+                    <p>Continuous coordination and rapid response for offshore and maritime operational requirements.</p>
+                </div>
+                <div class="detail-row reveal">
+                    <span class="no">03</span>
+                    <h3>Safety-First Culture</h3>
+                    <p>Safety and operational excellence remain our highest priority across every activity we support.</p>
+                </div>
+                <div class="detail-row reveal">
+                    <span class="no">04</span>
+                    <h3>Strategic Eastern Province Base</h3>
+                    <p>Headquartered in Al Khobar, close to the Kingdom's key ports, industrial zones and offshore activity.</p>
+                </div>
+                <div class="detail-row reveal">
+                    <span class="no">05</span>
+                    <h3>Professional, Experienced Team</h3>
+                    <p>Dedicated marine professionals focused on reliable, efficient and transparent service delivery.</p>
+                </div>
+                <div class="detail-row reveal">
+                    <span class="no">06</span>
+                    <h3>Client-Centred &amp; Flexible</h3>
+                    <p>Tailored operational solutions and responsive support shaped around each client's requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 · SECTORS -->
+    <section class="section on-dark" aria-labelledby="sectors-title">
+        <div class="shell">
+            <div class="sec-head reveal">
+                <span class="ghost-no" aria-hidden="true">05</span>
+                <p class="kicker">Clients &amp; Sectors</p>
+                <h2 id="sectors-title" class="display-2">Who we serve.</h2>
+                <p class="lede">
+                    Blue Radiance supports shipowners, offshore operators and industrial
+                    clients with chartered and managed vessels, professional operational
+                    coordination and dependable marine services.
+                </p>
+            </div>
+            <ul class="sector-grid reveal">
+                <li>Shipowners &amp; vessel operators</li>
+                <li>Offshore drilling &amp; energy companies</li>
+                <li>EPC contractors &amp; industrial projects</li>
+                <li>Oil &amp; gas sector stakeholders</li>
+                <li>Port authorities &amp; terminal operators</li>
+                <li>Logistics &amp; freight-forwarding partners</li>
+                <li>Marine construction &amp; engineering firms</li>
+                <li>Ship management &amp; procurement agencies</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 06 · REGION -->
+    <section class="section on-deep" aria-labelledby="region-title">
+        <div class="shell">
+            <div class="region-layout">
+                <div>
+                    <div class="sec-head reveal" style="margin-bottom:30px">
+                        <span class="ghost-no" aria-hidden="true">06</span>
+                        <p class="kicker">Where We Operate</p>
+                        <h2 id="region-title" class="display-2">Regional coverage.</h2>
+                        <p class="lede">
+                            We support marine and offshore operations across the major ports,
+                            industrial zones and offshore areas of the Eastern Province,
+                            Kingdom of Saudi Arabia — with reach into Bahrain through our
+                            partner network.
+                        </p>
+                    </div>
+                    <p class="pull reveal" style="color:#fff">
+                        From port to platform, our coverage spans the full operational map
+                        of the Eastern Province.
+                    </p>
+                </div>
+                <ul class="port-list reveal">
+                    <li>Al Khobar <span class="meta">Head Office</span></li>
+                    <li>Dammam <span class="meta">Port</span></li>
+                    <li>Ras Tanura <span class="meta">Port</span></li>
+                    <li>Jubail <span class="meta">Commercial &amp; Industrial</span></li>
+                    <li>Tanajib <span class="meta">Offshore</span></li>
+                    <li>Khafji <span class="meta">Offshore</span></li>
+                    <li>Anchorage Zones <span class="meta">Arabian Gulf</span></li>
+                    <li>Bahrain <span class="meta">Via Partners</span></li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- CTA -->
-
-    <section class="cta">
-
-        <h2>
-
-            Ready To Work With Us?
-
-        </h2>
-
-        <p>
-
-            Contact Blue Radiance Marine Company today for
-            reliable offshore support, marine logistics and
-            professional maritime operational services.
-
-        </p>
-
-        <a href="contact.html"
-            class="btn btn-primary">
-
-            Get In Touch
-
-        </a>
-
+    <section class="cta-band section" aria-labelledby="cta-title">
+        <div class="cta-media" aria-hidden="true">
+            <img src="images/osv-night-ops.jpg" alt="" loading="lazy" width="1800" height="1200">
+        </div>
+        <div class="cta-scrim" aria-hidden="true"></div>
+        <div class="shell">
+            <div class="cta-inner reveal">
+                <p class="kicker">Get In Touch</p>
+                <h2 id="cta-title" class="display-2">Our operations team<br>responds around the clock.</h2>
+                <p class="lede">
+                    Reach out for vessel chartering and management, offshore construction,
+                    procurement, equipment supply and skilled personnel across Saudi Arabia.
+                </p>
+                <a class="btn" href="contact.html?service=Vessel%20Chartering"><span>Request Vessel Availability</span> <span class="arr">→</span></a>
+                <div class="cta-contact">
+                    <a href="tel:+966136633697">+966 13 663 3697</a>
+                    <a href="tel:+966568120210">+966 56 812 0210</a>
+                    <a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
+    </main>
 
-    <footer>
-
-        <p>
-
-            ©️ 2026 Blue Radiance Marine Company.
-            All Rights Reserved.
-
-        </p>
-
+    <footer class="site-foot">
+        <div class="shell">
+            <div class="foot-grid">
+                <div class="foot-brand">
+                    <span class="brand-mark" aria-hidden="true">BR</span>
+                    <p class="foot-motto">Delivering excellence, every time.</p>
+                    <p class="foot-tag">
+                        Saudi-registered marine services provider headquartered in Al Khobar.
+                        Vessel chartering and vessel management, offshore construction &amp;
+                        commissioning, marine procurement, equipment supply and skilled personnel.
+                    </p>
+                </div>
+                <div class="foot-col">
+                    <h2 class="foot-h">Services</h2>
+                    <ul>
+                        <li><a href="vessel-chartering.html">Chartering &amp; Management</a></li>
+                        <li><a href="services.html#offshore-construction">Offshore Construction</a></li>
+                        <li><a href="services.html#marine-procurement">Marine Procurement</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h2 class="foot-h">Company</h2>
+                    <ul>
+                        <li><a href="about.html">About Blue Radiance</a></li>
+                        <li><a href="company-profile.html">Company Profile</a></li>
+                        <li><a href="documents/Blue-Radiance-Marine-Company-Profile-2026.pdf" download>Download Profile (PDF)</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h2 class="foot-h">Head Office</h2>
+                    <address>
+                        Building No. 3665, Street 4B<br>
+                        Ar Rakah Ash Shamaliyah District<br>
+                        Al Khobar 34225<br>
+                        Kingdom of Saudi Arabia
+                    </address>
+                    <ul style="margin-top:16px">
+                        <li><a href="tel:+966136633697">+966 13 663 3697</a></li>
+                        <li><a href="tel:+966568120210">+966 56 812 0210</a></li>
+                        <li><a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-bar">
+                <span>© 2026 Blue Radiance Marine Company. All rights reserved.</span>
+                <span class="coords">CR 7052455537 · Al Khobar · 26.3618°N 50.1950°E</span>
+            </div>
+        </div>
     </footer>
 
 </body>
-
 </html>
