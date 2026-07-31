@@ -110,18 +110,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 .sec-head.is-center .kicker::after{content:'';width:32px;height:1px;background:currentColor;flex:none}
 .sec-head.is-center .lede{margin-inline:auto}
 
-/* Ghost numeral watermark */
-.ghost-no{
-  position:absolute;top:-.28em;right:0;
-  width:max-content;                 /* else the grid stretches it and the digits drift left */
-  font-family:var(--font-display);font-weight:700;
-  font-size:clamp(4.4rem,9.5vw,8.6rem);line-height:1;
-  letter-spacing:-.05em;color:rgba(46,139,255,.16);
-  pointer-events:none;user-select:none;z-index:0;
-}
-.on-dark .ghost-no,.on-deep .ghost-no{color:rgba(127,182,255,.13)}
-.sec-head > *:not(.ghost-no){position:relative;z-index:1}
-
 .hairline{border:none;border-top:1px solid var(--line)}
 .on-dark .hairline,.on-deep .hairline{border-top-color:var(--line-d)}
 
@@ -198,10 +186,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 
 .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
 .brand-mark{
-  width:auto;height:46px;flex:none;display:block;
+  width:auto;height:56px;flex:none;display:block;
   transition:opacity .4s ease,transform .5s var(--ease);
 }
-.brand:hover .brand-mark{opacity:.88;transform:translateY(-1px)}
+.brand:hover .brand-mark{opacity:.9;transform:translateY(-1px)}
+@media (max-width:520px){ .brand-mark{height:48px} }
 .brand-name{display:flex;flex-direction:column;line-height:1.1}
 .brand-name .t{font-family:var(--font-display);font-weight:650;font-size:1rem;letter-spacing:.05em}
 .brand-name .s{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--fog-dim)}
