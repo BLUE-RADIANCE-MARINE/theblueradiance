@@ -189,8 +189,9 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 }
 .nav.is-scrolled .nav-progress{opacity:1}
 
+/* Matches .shell exactly so the brand mark aligns to the content grid. */
 .nav-inner{
-  width:min(1600px,calc(100% - (var(--gut) * 2)));margin-inline:auto;
+  width:min(1280px,calc(100% - (var(--gut) * 2)));margin-inline:auto;
   display:flex;align-items:center;justify-content:space-between;gap:28px;
 }
 
@@ -661,18 +662,20 @@ footer.site-foot{background:var(--deep);color:#fff}
 
 /* ---------- Reveal ---------- */
 
-.reveal{opacity:0;transform:translateY(24px)}
-.reveal.in-view{
+/* Content is visible by default. The hidden start-state applies only while JS
+   is running (html.js), so a script failure can never blank the page. */
+.js .reveal{opacity:0;transform:translateY(24px)}
+.js .reveal.in-view{
   opacity:1;transform:none;
   transition:opacity .95s var(--ease),transform .95s var(--ease);
   transition-delay:calc(var(--i,0)*80ms);
 }
 .media-reveal{overflow:hidden}
-.media-reveal img{transform:scale(1.08);transition:transform 1.5s var(--ease)}
-.media-reveal.in-view img{transform:scale(1)}
+.js .media-reveal img{transform:scale(1.08);transition:transform 1.5s var(--ease)}
+.js .media-reveal.in-view img{transform:scale(1)}
 @media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none}
-  .media-reveal img{transform:none}
+  .js .reveal{opacity:1;transform:none}
+  .js .media-reveal img{transform:none}
   .hero-title .ln > span,.hero-sub,.hero-actions{animation:none}
   .scroll-cue i{animation:none}
 }

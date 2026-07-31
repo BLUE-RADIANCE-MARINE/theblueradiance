@@ -45,8 +45,13 @@
     });
   }
 
-  /* ----- Scroll reveals ----- */
+  /* ----- Scroll reveals -----
+     Failsafe: whatever happens, everything is revealed within 3s. The hidden
+     start-state only exists while html.js is set, so content is never lost. */
   var revealables = document.querySelectorAll('.reveal, .media-reveal');
+  var revealAll = function () {
+    revealables.forEach(function (el) { el.classList.add('in-view'); });
+  };
   if ('IntersectionObserver' in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -57,8 +62,9 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     revealables.forEach(function (el) { io.observe(el); });
+    setTimeout(revealAll, 3000);
   } else {
-    revealables.forEach(function (el) { el.classList.add('in-view'); });
+    revealAll();
   }
 
   /* ----- Counters ----- */
