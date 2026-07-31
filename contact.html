@@ -1,412 +1,309 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blue Radiance Marine Company, Building No. 3665, Street 4B, Ar Rakah Ash Shamaliyah District, Al Khobar 34225, Kingdom of Saudi Arabia.">
 
-<title>Contact | Blue Radiance Marine Company</title>
+    <title>Contact Blue Radiance Marine Company | Al Khobar, Saudi Arabia</title>
+    <meta name="description" content="Contact Blue Radiance Marine Company — Building No. 3665, Street 4B, Ar Rakah Ash Shamaliyah District, Al Khobar 34225, Saudi Arabia. Phone +966 13 663 3697, operations@theblueradiance.com. 24/7 marine operations.">
+    <link rel="canonical" href="https://theblueradiance.com/contact.html">
 
-<link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Blue Radiance Marine Company">
+    <meta property="og:title" content="Contact Blue Radiance Marine Company">
+    <meta property="og:description" content="24/7 marine operations desk in Al Khobar, Saudi Arabia. Phone +966 13 663 3697 · operations@theblueradiance.com">
+    <meta property="og:url" content="https://theblueradiance.com/contact.html">
+    <meta property="og:image" content="https://theblueradiance.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { background: #f4f7fc; color: #222; overflow-x: hidden; }
-    img { max-width: 100%; display: block; }
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    .navbar {
-        position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
-        padding: 18px 6%; background: linear-gradient(90deg, #0b1220, #18263f);
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500..700&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/site.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Blue Radiance Marine Company",
+      "url": "https://theblueradiance.com/contact.html",
+      "about": {
+        "@type": "LocalBusiness",
+        "name": "Blue Radiance Marine Company",
+        "telephone": "+966136633697",
+        "email": "operations@theblueradiance.com",
+        "url": "https://www.theblueradiance.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Building No. 3665, Street 4B, Ar Rakah Ash Shamaliyah District",
+          "addressLocality": "Al Khobar",
+          "postalCode": "34225",
+          "addressCountry": "SA"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 26.361759, "longitude": 50.194994 }
+      }
     }
-
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: white; }
-    .logo img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; background: white; }
-    .logo-text { font-size: 1.4rem; font-weight: 700; line-height: 1.3; }
-    .nav-menu { display: flex; list-style: none; gap: 35px; }
-    .nav-menu a { text-decoration: none; color: white; font-weight: 600; transition: 0.3s; position: relative; }
-    .nav-menu a:hover { color: #4da6ff; }
-    .nav-menu a.active { color: #0099ff; font-weight: 700; }
-
-    .nav-menu a.active::after {
-        content: ''; position: absolute; bottom: -8px; left: 0; right: 0; height: 3px;
-        background: linear-gradient(90deg, #0099ff, #00d4ff);
-        border-radius: 2px; box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
-    }
-
-    /* ===== Hero entrance animation ===== */
-    @keyframes heroFadeUp {
-        from { opacity: 0; transform: translateY(40px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero {
-        margin-top: 95px; min-height: 65vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.62)), url('images/offshore.PNG');
-        background-size: cover; background-position: center;
-        display: flex; align-items: center; justify-content: center;
-        text-align: center; padding: 60px 20px; color: white;
-    }
-
-    .hero-content { max-width: 900px; }
-
-    .hero h1 {
-        font-size: 4.2rem; margin-bottom: 22px; line-height: 1.1; font-weight: 800;
-        opacity: 0;
-        animation: heroFadeUp 0.9s ease forwards;
-    }
-
-    .hero p {
-        font-size: 1.2rem; line-height: 1.9; color: rgba(255, 255, 255, 0.9);
-        opacity: 0;
-        animation: heroFadeUp 0.9s ease 0.3s forwards;
-    }
-
-    .contact-section {
-        max-width: 1400px; margin: 90px auto; padding: 0 6%;
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;
-    }
-
-    .contact-box {
-        background: white; border-radius: 24px; padding: 40px;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); transition: 0.4s;
-    }
-
-    .contact-box:hover { transform: translateY(-10px); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12); }
-    .contact-box h2 { color: #0d1d3b; font-size: 1.7rem; margin-bottom: 18px; line-height: 1.3; }
-    .contact-box p, .contact-box a { font-size: 1.02rem; line-height: 1.9; text-decoration: none; color: #444; }
-    .contact-box a { color: #0066ff; font-weight: 500; word-break: break-word; }
-    .contact-box a:hover { color: #0051cc; text-decoration: underline; }
-    .contact-box .email-link { display: inline-block; margin-bottom: 12px; }
-
-    .contact-form .form-row { display: flex; gap: 15px; margin-bottom: 16px; }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-        width: 100%; padding: 14px 16px; border-radius: 12px;
-        border: 1px solid #dfe5ef; font-size: 15px; outline: none; transition: 0.3s;
-        color: #222; background: white;
-    }
-
-    .contact-form input:focus,
-    .contact-form select:focus,
-    .contact-form textarea:focus { border-color: #0066ff; box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1); }
-
-    .contact-form textarea { resize: vertical; }
-
-    .form-status {
-        display: none; margin-top: 16px; padding: 12px 14px;
-        border-radius: 10px; font-size: 0.95rem; line-height: 1.5;
-    }
-
-    .form-status.success {
-        display: block; background: #e8f8ef; color: #116334; border: 1px solid #b9ebcc;
-    }
-
-    .btn {
-        display: inline-flex; align-items: center; justify-content: center;
-        min-width: 250px; padding: 15px 34px; border-radius: 12px;
-        border: none; text-decoration: none; cursor: pointer;
-        font-weight: 600; line-height: 1.3; transition: 0.3s; font-size: 1rem;
-    }
-
-    .btn-primary { background: #0066ff; color: white; }
-    .btn-primary:hover { background: #0051cc; transform: translateY(-5px); }
-    .btn-primary:disabled { background: #9db8e0; cursor: default; transform: none; }
-    .btn-outline { border: 2px solid #0066ff; color: #0066ff; background: white; }
-    .btn-outline:hover { background: #0066ff; color: white; transform: translateY(-5px); }
-
-    .contact-image img {
-        width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 22px;
-    }
-
-    .map-section { padding: 0 6% 80px; }
-    .map-container { max-width: 1300px; margin: auto; }
-    .map-title { text-align: center; font-size: 2.6rem; color: #0d1d3b; margin-bottom: 25px; }
-
-    .location-card {
-        background: white; border-radius: 16px; padding: 28px 32px;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-        max-width: 760px; margin: 0 auto 25px; text-align: left; line-height: 1.9;
-    }
-
-    .location-card strong { color: #0d1d3b; font-size: 1.1rem; }
-
-    .map-frame {
-        position: relative; overflow: hidden; border-radius: 24px;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-    }
-
-    .map-frame iframe { width: 100%; height: 500px; border: none; display: block; }
-
-    .map-overlay-buttons {
-        position: absolute; bottom: 18px; right: 18px;
-        display: flex; gap: 10px; z-index: 5;
-    }
-
-    .map-btn {
-        display: inline-flex; align-items: center; gap: 7px;
-        padding: 9px 16px; border-radius: 50px;
-        font-size: 0.85rem; font-weight: 600; text-decoration: none;
-        background: rgba(255, 255, 255, 0.95); color: #0d1d3b;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-        backdrop-filter: blur(6px); transition: 0.3s;
-    }
-
-    .map-btn:hover { background: #0066ff; color: white; transform: translateY(-3px); }
-    .map-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-
-    .cta {
-        background: linear-gradient(90deg, #08111f, #10213f);
-        color: white; text-align: center; padding: 100px 6%;
-    }
-
-    .cta h2 { font-size: 3.2rem; margin-bottom: 22px; }
-    .cta p { max-width: 900px; margin: 0 auto 40px; line-height: 1.9; color: rgba(255, 255, 255, 0.82); }
-    .btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; }
-
-    footer { background: #050b16; color: white; text-align: center; padding: 35px 20px; }
-    footer p { color: rgba(255, 255, 255, 0.75); margin: 10px 0; line-height: 1.8; }
-
-    @media(max-width:768px) {
-        .navbar { padding: 15px 4%; }
-        .nav-container { flex-direction: column; gap: 16px; }
-        .logo { width: 100%; justify-content: center; text-align: left; }
-        .logo img { width: 52px; height: 52px; }
-        .logo-text { font-size: 1rem; line-height: 1.3; max-width: 220px; }
-        .nav-menu { gap: 18px; flex-wrap: wrap; justify-content: center; }
-        .nav-menu a.active::after { bottom: -5px; height: 2px; }
-        .hero { margin-top: 145px; }
-        .hero h1 { font-size: 2.5rem; }
-        .hero p { font-size: 1rem; }
-        .contact-form .form-row { flex-direction: column; }
-        .contact-box { padding: 30px 24px; }
-        .cta h2 { font-size: 2.2rem; }
-        .map-title { font-size: 2rem; }
-        .map-frame iframe { height: 380px; }
-        .map-overlay-buttons { bottom: 12px; right: 12px; flex-direction: column; align-items: flex-end; gap: 8px; }
-        .map-btn { padding: 8px 14px; font-size: 0.8rem; }
-        .location-card { padding: 22px 20px; }
-        .btn { width: 100%; min-width: 0; }
-    }
-</style>
-
+    </script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/Img.PNG" alt="Blue Radiance Logo">
-                <span class="logo-text">Blue Radiance Marine Company</span>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- NAVIGATION -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="Blue Radiance Marine Company — home">
+                <span class="brand-mark" aria-hidden="true">BR</span>
+                <span class="brand-name">
+                    <span class="t">BLUE RADIANCE</span>
+                    <span class="s">Marine Company</span>
+                </span>
             </a>
+            <nav aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="vessel-chartering.html">Vessel Chartering</a></li>
+                    <li><a href="vessel-management.html">Vessel Management</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a class="btn nav-cta" href="contact.html?service=Vessel%20Chartering">Charter a Vessel</a></li>
+                </ul>
+            </nav>
+            <button class="nav-burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html"><span class="idx">01</span>Home</a></li>
+            <li><a href="vessel-chartering.html"><span class="idx">02</span>Vessel Chartering</a></li>
+            <li><a href="vessel-management.html"><span class="idx">03</span>Vessel Management</a></li>
+            <li><a href="services.html"><span class="idx">04</span>Services</a></li>
+            <li><a href="about.html"><span class="idx">05</span>About</a></li>
+            <li><a href="contact.html" class="active"><span class="idx">06</span>Contact</a></li>
         </ul>
-    </div>
-</nav>
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>Contact Blue Radiance Marine Company</h1>
-        <p>
-            Professional marine logistics, offshore operational support,
-            vessel coordination and technical maritime services across Saudi Arabia.
-        </p>
-    </div>
-</section>
-
-<section class="contact-section">
-    <div class="contact-box contact-form">
-        <h2>Get in Touch</h2>
-
-        <form id="contactForm">
-            <div class="form-row">
-                <input type="text" name="Full Name" placeholder="Full Name" required>
-                <input type="text" name="Company Name" placeholder="Company Name">
-            </div>
-
-            <div class="form-row">
-                <input type="email" name="Email" placeholder="Email Address" required>
-                <input type="tel" name="Phone Number" placeholder="Phone Number" required>
-            </div>
-
-            <div class="form-row">
-                <select name="Service" required>
-                    <option value="">Select a Service</option>
-                    <option>Marine Logistics</option>
-                    <option>Offshore Support</option>
-                    <option>Port &amp; Vessel Assistance</option>
-                    <option>Technical Support</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <textarea rows="6" name="Message" placeholder="Write your message here..." required></textarea>
-            </div>
-
-            <div style="text-align:right;">
-                <button type="submit" class="btn btn-primary" id="sendButton">Send Message</button>
-            </div>
-
-            <div id="formStatus" class="form-status"></div>
-        </form>
-    </div>
-
-    <div class="contact-box">
-        <h2>Operations Email</h2>
-        <a class="email-link" href="https://outlook.office.com/mail/deeplink/compose?to=operations@theblueradiance.com&subject=Business%20Inquiry" target="_blank" rel="noopener">operations@theblueradiance.com</a>
-        <p>Marine logistics, offshore coordination, vessel operations and maritime support inquiries.</p>
-    </div>
-
-    <div class="contact-box contact-image">
-        <img src="images/offshore.PNG" alt="Marine Operations">
-    </div>
-
-    <div class="contact-box">
-        <h2>IT Department</h2>
-        <a class="email-link" href="https://outlook.office.com/mail/deeplink/compose?to=ithead@theblueradiance.com&subject=IT%20Support%20Request" target="_blank" rel="noopener">ithead@theblueradiance.com</a>
-        <p>Website support, technical assistance and digital communication inquiries.</p>
-    </div>
-
-    <div class="contact-box">
-        <h2>Contact Numbers</h2>
-        <p><a href="tel:+966136633697">+966 13 663 3697</a></p>
-        <p><a href="tel:+966568120210">+966 56 812 0210</a></p>
-    </div>
-
-    <div class="contact-box">
-        <h2>Head Office</h2>
-        <p>
-            Blue Radiance Marine Company<br>
-            Building No. 3665, Street 4B<br>
-            Ar Rakah Ash Shamaliyah District<br>
-            Al Khobar 34225<br>
-            Kingdom of Saudi Arabia
-        </p>
-        <br>
-        <a href="https://www.google.com/maps/search/?api=1&query=26.361759,50.194994" target="_blank" rel="noopener">View on Google Maps</a>
-        <br>
-        <a href="https://www.theblueradiance.com" target="_blank" rel="noopener">www.theblueradiance.com</a>
-    </div>
-</section>
-
-<section class="map-section">
-    <div class="map-container">
-        <h2 class="map-title">Our Location</h2>
-
-        <div class="location-card">
-            <strong>Blue Radiance Marine Company</strong><br>
-            Building No. 3665, Street 4B<br>
-            Ar Rakah Ash Shamaliyah District<br>
-            Al Khobar 34225<br>
-            Kingdom of Saudi Arabia
-        </div>
-
-        <div class="map-frame">
-            <iframe
-                src="https://www.google.com/maps?q=26.361759,50.194994&z=17&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Blue Radiance Marine Company Location"
-                allowfullscreen></iframe>
-
-            <div class="map-overlay-buttons">
-                <a href="https://www.google.com/maps/search/?api=1&query=26.361759,50.194994" target="_blank" rel="noopener" class="map-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-                    Google Maps
-                </a>
-                <a href="https://maps.apple.com/?ll=26.361759,50.194994&q=Blue%20Radiance%20Marine%20Company" target="_blank" rel="noopener" class="map-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-                    Apple Maps
-                </a>
-            </div>
+        <div class="mobile-menu-foot">
+            <a href="tel:+966136633697">+966 13 663 3697</a>
+            <a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a>
+            <span>Al Khobar, Kingdom of Saudi Arabia</span>
         </div>
     </div>
-</section>
 
-<section class="cta">
-    <h2>Let's Work Together</h2>
-    <p>
-        Our team is available for marine logistics, offshore operational support,
-        vessel coordination and technical maritime solutions across Saudi Arabia.
-    </p>
+    <main id="main">
 
-    <div class="btn-group">
-        <a href="https://outlook.office.com/mail/deeplink/compose?to=operations@theblueradiance.com&subject=Business%20Inquiry" target="_blank" rel="noopener" class="btn btn-primary">Email Operations</a>
-        <a href="https://outlook.office.com/mail/deeplink/compose?to=ithead@theblueradiance.com&subject=IT%20Support%20Request" target="_blank" rel="noopener" class="btn btn-outline">Contact IT</a>
-    </div>
-</section>
+    <!-- PAGE HEAD (dark, no image — fast) -->
+    <section class="on-deep" aria-label="Contact introduction" style="padding-top:calc(var(--nav-h) + clamp(64px,9vw,120px));padding-bottom:clamp(64px,8vw,110px)">
+        <div class="shell">
+            <p class="kicker" style="margin-bottom:24px">Contact · 24/7 Marine Operations</p>
+            <h1 class="display-1" style="max-width:14ch">Reach the duty desk.</h1>
+            <p class="hero-sub" style="margin-top:24px">
+                Charter requirements, management scopes, port calls or supply — one
+                desk answers, around the clock, from Al Khobar.
+            </p>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2026 Blue Radiance Marine Company. All rights reserved.</p>
-    <p>Blue Radiance Marine Company,<br>Building No. 3665, Street 4B,<br>Ar Rakah Ash Shamaliyah District,<br>Al Khobar 34225,<br>Kingdom of Saudi Arabia</p>
-</footer>
+    <!-- CONTACT GRID -->
+    <section class="section" aria-labelledby="form-title">
+        <div class="shell">
+            <div class="contact-grid">
 
-<script>
-    const contactForm = document.getElementById('contactForm');
-    const sendButton = document.getElementById('sendButton');
-    const formStatus = document.getElementById('formStatus');
+                <!-- FORM -->
+                <div class="card">
+                    <h2 id="form-title" class="display-3" style="margin-bottom:10px">Send an inquiry</h2>
+                    <p style="color:var(--muted);margin-bottom:28px;font-size:.97rem">
+                        Submitting opens a pre-filled email in your own mail app,
+                        addressed to our operations team — nothing is stored on this website.
+                    </p>
+                    <form id="contactForm" class="form-grid" novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="f-name">Full Name *</label>
+                                <input id="f-name" name="name" type="text" autocomplete="name" required>
+                                <span class="err">Please enter your name.</span>
+                            </div>
+                            <div class="field">
+                                <label for="f-company">Company</label>
+                                <input id="f-company" name="company" type="text" autocomplete="organization">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="f-email">Email Address *</label>
+                                <input id="f-email" name="email" type="email" autocomplete="email" required>
+                                <span class="err">Please enter a valid email address.</span>
+                            </div>
+                            <div class="field">
+                                <label for="f-phone">Phone</label>
+                                <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="f-service">Service *</label>
+                            <select id="f-service" name="service" required>
+                                <option value="">Select a service…</option>
+                                <option>Vessel Chartering</option>
+                                <option>Vessel Management</option>
+                                <option>Ship Agency</option>
+                                <option>Offshore Marine Operations</option>
+                                <option>Offshore Construction</option>
+                                <option>Marine Procurement</option>
+                                <option>Equipment Supply</option>
+                                <option>Offshore Manpower</option>
+                                <option>Other / General</option>
+                            </select>
+                            <span class="err">Please select a service.</span>
+                        </div>
+                        <div class="field">
+                            <label for="f-message">Requirement *</label>
+                            <textarea id="f-message" name="message" rows="6" required placeholder="Scope, location, dates, vessel type — whatever you can share."></textarea>
+                            <span class="err">Please describe your requirement.</span>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn">Compose Inquiry Email <span class="arr">→</span></button>
+                        </div>
+                        <div id="formStatus" class="form-status" role="status"></div>
+                    </form>
+                </div>
 
-    let emailDraftOpened = false;
+                <!-- DIRECT DETAILS -->
+                <div>
+                    <h2 class="display-3" style="margin-bottom:22px">Direct lines</h2>
+                    <div class="info-stack">
+                        <div class="info-row">
+                            <span class="k">Phone</span>
+                            <span class="v">
+                                <a href="tel:+966136633697">+966 13 663 3697</a><br>
+                                <a href="tel:+966568120210">+966 56 812 0210</a>
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="k">Operations</span>
+                            <span class="v">
+                                <a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a><br>
+                                Charters, vessel management, agency and marine support inquiries.
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="k">IT &amp; Website</span>
+                            <span class="v">
+                                <a href="mailto:ithead@theblueradiance.com">ithead@theblueradiance.com</a><br>
+                                Website support and digital communication.
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="k">Head Office</span>
+                            <span class="v">
+                                Blue Radiance Marine Company<br>
+                                Building No. 3665, Street 4B<br>
+                                Ar Rakah Ash Shamaliyah District<br>
+                                Al Khobar 34225<br>
+                                Kingdom of Saudi Arabia
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="k">Availability</span>
+                            <span class="v">Marine operations desk — 24 hours, 7 days a week.</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="k">Web</span>
+                            <span class="v"><a href="https://www.theblueradiance.com" rel="noopener">www.theblueradiance.com</a></span>
+                        </div>
+                    </div>
+                </div>
 
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+            </div>
+        </div>
+    </section>
 
-        if (emailDraftOpened) {
-            formStatus.className = 'form-status success';
-            formStatus.textContent = 'Your Outlook email draft is already open. Please press Send in Outlook to complete.';
-            return;
-        }
+    <!-- MAP -->
+    <section class="section" aria-labelledby="map-title" style="padding-top:0">
+        <div class="shell">
+            <div class="sec-head reveal" style="margin-bottom:34px">
+                <p class="kicker">Find Us</p>
+                <h2 id="map-title" class="display-2">Al Khobar, Eastern Province.</h2>
+            </div>
+            <div class="map-frame reveal">
+                <iframe
+                    src="https://www.google.com/maps?q=26.361759,50.194994&z=17&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Map showing the Blue Radiance Marine Company head office in Al Khobar"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="map-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=26.361759,50.194994" target="_blank" rel="noopener">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                    Open in Google Maps
+                </a>
+                <a href="https://maps.apple.com/?ll=26.361759,50.194994&q=Blue%20Radiance%20Marine%20Company" target="_blank" rel="noopener">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                    Open in Apple Maps
+                </a>
+                <span style="align-self:center;font-size:.82rem;color:var(--muted);letter-spacing:.14em">26.361759, 50.194994</span>
+            </div>
+        </div>
+    </section>
 
-        const formData = new FormData(contactForm);
-        const fullName = formData.get('Full Name') || '';
-        const companyName = formData.get('Company Name') || '';
-        const email = formData.get('Email') || '';
-        const phone = formData.get('Phone Number') || '';
-        const service = formData.get('Service') || '';
-        const message = formData.get('Message') || '';
+    </main>
 
-        const subject = 'New Website Contact Message - ' + service;
-        const body = [
-            'New website contact message',
-            '',
-            'Full Name: ' + fullName,
-            'Company Name: ' + companyName,
-            'Email: ' + email,
-            'Phone Number: ' + phone,
-            'Service: ' + service,
-            '',
-            'Message:',
-            message
-        ].join('\n');
-
-        const outlookUrl = 'https://outlook.office.com/mail/deeplink/compose?to=ithead@theblueradiance.com'
-            + '&subject=' + encodeURIComponent(subject)
-            + '&body=' + encodeURIComponent(body);
-
-        window.open(outlookUrl, '_blank', 'noopener');
-
-        emailDraftOpened = true;
-        sendButton.disabled = true;
-        sendButton.textContent = 'Draft Opened';
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'Your email draft has opened in Outlook. Please press Send in Outlook to complete.';
-    });
-</script>
+    <!-- FOOTER -->
+    <footer class="site-foot">
+        <div class="shell">
+            <div class="foot-grid">
+                <div class="foot-brand">
+                    <span class="brand-mark" aria-hidden="true">BR</span>
+                    <p class="foot-tag">
+                        Offshore marine company headquartered in Al Khobar, Kingdom of
+                        Saudi Arabia. Vessel chartering and vessel management for the
+                        Arabian Gulf energy industry.
+                    </p>
+                </div>
+                <div class="foot-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="vessel-chartering.html">Vessel Chartering</a></li>
+                        <li><a href="vessel-management.html">Vessel Management</a></li>
+                        <li><a href="services.html#ship-agency">Ship Agency</a></li>
+                        <li><a href="services.html#offshore-operations">Offshore Operations</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Blue Radiance</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="tel:+966136633697">+966 13 663 3697</a></li>
+                        <li><a href="tel:+966568120210">+966 56 812 0210</a></li>
+                        <li><a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Head Office</h4>
+                    <address>
+                        Blue Radiance Marine Company<br>
+                        Building No. 3665, Street 4B<br>
+                        Ar Rakah Ash Shamaliyah District<br>
+                        Al Khobar 34225<br>
+                        Kingdom of Saudi Arabia
+                    </address>
+                </div>
+            </div>
+            <div class="foot-bar">
+                <span>© 2026 Blue Radiance Marine Company. All rights reserved. CR 7052455537</span>
+                <span class="coords">26°21′42″ N · 50°11′42″ E</span>
+            </div>
+        </div>
+    </footer>
 
 </body>
-
 </html>
