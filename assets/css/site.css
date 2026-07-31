@@ -602,7 +602,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
   display:inline-flex;gap:10px;align-items:center;
   font-size:.76rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--fog-dim);
 }
-.crumb a{color:inherit;text-decoration:none;transition:color .3s ease}
+.crumb a{display:inline-block;padding-block:3px;color:inherit;text-decoration:none;transition:color .3s ease}
 .crumb a:hover{color:#fff}
 
 /* ---------- Stats ---------- */
@@ -651,6 +651,71 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 .form-status.success{display:block;background:#EAF6EE;color:#14532D;border:1px solid #BBE3C8}
 .form-status.error{display:block;background:#FBEDEA;color:#7B1D12;border:1px solid #F0C4BB}
 
+/* ---------- Contact channels ---------- */
+
+.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.channel{
+  position:relative;background:var(--paper);
+  padding:clamp(26px,2.9vw,42px);
+  display:grid;gap:14px;align-content:start;
+  transition:background .45s var(--ease);overflow:hidden;
+}
+.channel::after{
+  content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--azure);
+  transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);
+}
+.channel:hover{background:var(--white)}
+.channel:hover::after{transform:scaleX(1)}
+.channel-icon{
+  width:42px;height:42px;border-radius:2px;display:grid;place-items:center;
+  background:rgba(46,139,255,.10);color:var(--azure);
+}
+.channel-icon svg{width:19px;height:19px}
+.channel h3{font-size:1.12rem;letter-spacing:-.01em}
+.channel .lines{display:grid;gap:0}
+.channel .lines a{
+  color:var(--azure-ink);text-decoration:none;font-weight:500;font-size:1rem;
+  border-bottom:1px solid transparent;justify-self:start;transition:border-color .3s ease;
+  word-break:break-word;padding-block:4px;   /* keeps tap targets >= 24px */
+}
+.channel .lines a:hover{border-bottom-color:currentColor}
+.channel p{font-size:.9rem;line-height:1.65;color:var(--muted)}
+
+/* ---------- Head office panel ---------- */
+
+.office{display:grid;gap:0;border-top:1px solid var(--line)}
+.office .row{display:grid;grid-template-columns:132px 1fr;gap:18px;padding-block:18px;border-bottom:1px solid var(--line)}
+.office .k{
+  font-family:var(--font-display);font-size:.7rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:4px;
+}
+.office .v{color:var(--text);line-height:1.7}
+.office .v a{display:inline-block;padding-block:3px;color:var(--azure-ink);text-decoration:none;font-weight:500}
+.office .v a:hover{text-decoration:underline}
+
+.duty{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border:1px solid var(--line);border-radius:50px;
+  font-size:.84rem;font-weight:500;color:var(--text);background:var(--white);
+}
+.duty .pip{width:7px;height:7px;border-radius:50%;background:#2FA36B;flex:none;box-shadow:0 0 0 3px rgba(47,163,107,.18)}
+
+/* ---------- Map ---------- */
+
+.map-wrap{position:relative}
+.map-card{
+  position:absolute;z-index:5;
+  left:clamp(14px,2.4vw,28px);top:clamp(14px,2.4vw,28px);
+  max-width:330px;background:var(--deep);color:#fff;
+  padding:clamp(20px,2.2vw,28px);border-radius:3px;
+  box-shadow:0 22px 50px rgba(4,9,15,.34);
+}
+.map-card h3{font-size:1.05rem;margin-bottom:10px}
+.map-card address{font-style:normal;color:var(--fog);font-size:.93rem;line-height:1.75}
+.map-card .coord{
+  display:block;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-d);
+  font-family:var(--font-display);font-size:.7rem;letter-spacing:.18em;color:var(--fog-dim);
+}
 .map-frame{position:relative;overflow:hidden;border-radius:3px;border:1px solid var(--line-soft)}
 .map-frame iframe{width:100%;height:clamp(340px,42vw,480px);border:0;display:block;filter:grayscale(.22) contrast(1.04)}
 .map-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:16px;align-items:center}
@@ -733,6 +798,7 @@ footer.site-foot{background:var(--deep);color:#fff}
   .profile-cover{max-width:380px}
   .profile-cover .sheet{transform:none}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .channel-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .detail-row{grid-template-columns:64px 1fr}
   .detail-row p,.detail-row .sub{grid-column:2}
@@ -746,7 +812,9 @@ footer.site-foot{background:var(--deep);color:#fff}
   .stat-strip{grid-template-columns:1fr;gap:28px}
   .form-row{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
-  .info-row{grid-template-columns:1fr;gap:5px;padding-block:16px}
+  .info-row,.office .row{grid-template-columns:1fr;gap:5px;padding-block:16px}
+  /* overlay would cover the map on small screens — sit it above instead */
+  .map-card{position:static;max-width:none;margin-bottom:14px}
   .hero-actions .btn{width:100%}
   .matrix,.sector-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
