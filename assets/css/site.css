@@ -343,7 +343,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 
 /* ---------- Service grid ---------- */
 
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+/* 2-up: the core grid holds four cards, so three columns left an orphan row */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .on-dark .svc-grid,.on-deep .svc-grid{background:var(--line-d);border-color:var(--line-d)}
 .svc-cell{
   position:relative;background:var(--paper);
