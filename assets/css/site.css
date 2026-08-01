@@ -190,7 +190,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
   transition:opacity .4s ease,transform .5s var(--ease);
 }
 .brand:hover .brand-mark{opacity:.9;transform:translateY(-1px)}
-@media (max-width:520px){ .brand-mark{height:48px} }
 .brand-name{display:flex;flex-direction:column;line-height:1.1}
 .brand-name .t{font-family:var(--font-display);font-weight:650;font-size:1rem;letter-spacing:.05em}
 .brand-name .s{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--fog-dim)}
@@ -532,15 +531,31 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 }
 .profile-contents li .n{font-family:var(--font-display);font-size:.74rem;font-weight:600;letter-spacing:.16em;color:var(--azure-lt);flex:none}
 
-/* Subtle homepage CTA — the profile has its own page, so this stays quiet */
+/* Homepage profile band — compact trust section on desktop, CTA strip on phones */
 .profile-strip-cta{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-  gap:clamp(20px,3vw,44px);
-  padding:clamp(26px,3vw,40px) clamp(24px,3vw,44px);
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(22px,3vw,44px);
+  padding:clamp(24px,2.6vw,34px) clamp(24px,3vw,40px);
   border:1px solid var(--line-d);border-radius:3px;
   background:linear-gradient(100deg,rgba(46,139,255,.07),rgba(46,139,255,0) 62%);
 }
+.profile-strip-media{flex:none;width:clamp(88px,8vw,116px)}
+.profile-strip-media img{
+  width:100%;height:auto;border-radius:2px;
+  box-shadow:0 14px 30px rgba(4,9,15,.42);
+  transition:transform .6s var(--ease);
+}
+.profile-strip-cta:hover .profile-strip-media img{transform:translateY(-3px)}
+.profile-strip-copy{display:grid;gap:9px;min-width:0}
+.profile-strip-lede{font-size:.97rem;line-height:1.6;color:var(--fog);max-width:52ch}
 .profile-strip-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+@media (max-width:1080px){
+  .profile-strip-cta{grid-template-columns:auto minmax(0,1fr);row-gap:22px}
+  .profile-strip-actions{grid-column:1 / -1}
+}
 
 .profile-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px);margin-top:clamp(40px,5vw,64px)}
 .profile-strip figure{position:relative;overflow:hidden;border-radius:2px;border:1px solid var(--line-d);background:var(--navy)}
@@ -843,15 +858,29 @@ footer.site-foot{background:var(--deep);color:#fff}
 
 @media (max-width:640px){
 
-  /* Hero: ~76vh instead of a full screen, with tighter internal spacing */
-  .hero{min-height:76svh}
-  .hero.hero-page{min-height:64svh}
-  .hero-content{padding-block:34px 26px}
-  .hero-content .kicker{margin-bottom:14px;font-size:.66rem;letter-spacing:.2em}
-  .display-1{font-size:clamp(2.3rem,10.5vw,3rem);line-height:1.02}
-  .hero-sub{margin-top:16px;font-size:1rem;line-height:1.62}
-  .hero-actions{margin-top:22px;gap:10px}
-  .hero-stats-grid{padding-block:13px;gap:12px}
+  /* Slimmer header — logo and company name stay fully legible */
+  :root{--nav-h:64px}
+  .brand-mark{height:42px}
+  .brand{gap:10px}
+  .brand-name .t{font-size:.92rem;letter-spacing:.04em}
+  .brand-name .s{font-size:.6rem;letter-spacing:.24em}
+  .nav-burger{width:40px;height:40px;gap:6px}
+  .nav-burger span{width:22px}
+
+  /* Profile band collapses to the compact CTA — image and lede stand down */
+  .profile-strip-cta{grid-template-columns:1fr;gap:16px;padding:24px 22px}
+  .profile-strip-media,.profile-strip-lede{display:none}
+  .profile-strip-copy{gap:8px}
+
+  /* Hero: ~70vh, with tighter internal spacing */
+  .hero{min-height:70svh}
+  .hero.hero-page{min-height:60svh}
+  .hero-content{padding-block:22px 17px}
+  .hero-content .kicker{margin-bottom:11px;font-size:.66rem;letter-spacing:.2em}
+  .display-1{font-size:clamp(2.25rem,10.2vw,2.9rem);line-height:1.02}
+  .hero-sub{margin-top:13px;font-size:.98rem;line-height:1.6}
+  .hero-actions{margin-top:17px;gap:9px}
+  .hero-stats-grid{padding-block:11px;gap:11px}
   .hstat .v{font-size:.94rem}
   .hstat .l{font-size:.6rem;letter-spacing:.14em}
 
@@ -885,14 +914,20 @@ footer.site-foot{background:var(--deep);color:#fff}
   .flagship li,.facet li{padding-block:10px}
   .pull{font-size:1.08rem;padding-left:16px}
 
-  /* Footer */
-  .foot-grid{padding-block:44px 28px;gap:30px}
-  .foot-col .foot-h{margin-bottom:12px}
-  .foot-brand{gap:14px}
-  .foot-bar{padding-block:16px;font-size:.76rem}
+  /* Footer — two link columns instead of a long stack; nothing removed */
+  .foot-grid{grid-template-columns:1fr 1fr;padding-block:36px 22px;gap:26px 18px}
+  .foot-brand{grid-column:1 / -1}
+  .foot-col:last-child{grid-column:1 / -1}
+  .foot-col .foot-h{margin-bottom:9px;font-size:.66rem;letter-spacing:.2em}
+  .foot-col ul{gap:0}
+  .foot-col a{padding-block:6px;font-size:.9rem}
+  .foot-col address{font-size:.9rem;line-height:1.7}
+  .foot-brand{gap:11px}
+  .foot-brand .brand-mark{height:46px}
+  .foot-motto{font-size:.96rem}
+  .foot-tag{font-size:.88rem;line-height:1.65}
+  .foot-bar{padding-block:14px;font-size:.74rem;gap:6px 16px}
 
-  /* Profile CTA strip */
-  .profile-strip-cta{padding:24px 22px;gap:18px}
   .profile-strip-actions{width:100%}
   .profile-strip-actions .btn{width:100%}
 
@@ -906,8 +941,10 @@ footer.site-foot{background:var(--deep);color:#fff}
 
 /* Very small phones */
 @media (max-width:380px){
-  .hero-content{padding-block:28px 22px}
-  .display-1{font-size:2.1rem}
+  .hero-content{padding-block:24px 20px}
+  .display-1{font-size:2.05rem}
   .hero-stats-grid{gap:10px}
-  .section{padding-block:48px}
+  .section{padding-block:46px}
+  .brand-name .t{font-size:.86rem}
+  .brand-mark{height:40px}
 }
