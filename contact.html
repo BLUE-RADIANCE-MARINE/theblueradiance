@@ -229,10 +229,12 @@
                     <p class="kicker" style="margin-bottom:16px">Inquiry</p>
                     <h2 id="form-title" class="display-3" style="margin-bottom:10px">Send us your requirement</h2>
                     <p style="color:var(--muted);margin-bottom:28px;font-size:.96rem">
-                        Submitting opens a pre-filled email in your own mail application,
-                        addressed to our operations team. Nothing is stored on this website.
+                        Sent straight to our operations team. We respond around the clock —
+                        or call +966 13 663 3697 if it is urgent.
                     </p>
                     <form id="contactForm" class="form-grid" novalidate>
+                        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+                               aria-hidden="true" style="display:none !important">
                         <div class="form-row">
                             <div class="field">
                                 <label for="f-name">Full Name *</label>
@@ -277,7 +279,7 @@
                             <span class="err">Please describe your requirement.</span>
                         </div>
                         <div>
-                            <button type="submit" class="btn"><span>Compose Inquiry Email</span> <span class="arr">→</span></button>
+                            <button type="submit" class="btn"><span>Send Inquiry</span> <span class="arr">→</span></button>
                         </div>
                         <div id="formStatus" class="form-status" role="status"></div>
                     </form>

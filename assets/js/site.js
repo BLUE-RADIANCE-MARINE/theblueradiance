@@ -133,20 +133,38 @@
       return ok;
     };
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!validate()) {
-        statusBox.className = 'form-status error';
-        statusBox.textContent = 'Please complete the highlighted fields before sending.';
-        return;
-      }
-      var val = function (name) {
-        var f = form.querySelector('[name="' + name + '"]');
-        return f ? f.value.trim() : '';
-      };
-      var subject = 'Charter / Service Inquiry — ' + (val('service') || 'General') +
-        (val('company') ? ' — ' + val('company') : '');
-      var body = [
+    /* ------------------------------------------------------------------
+       WHERE INQUIRIES GO
+       Inquiries are POSTed to a Cloudflare Worker which sends the email
+       through Microsoft Graph as operations@theblueradiance.com, using an app
+       registration in the Blue Radiance Microsoft 365 tenant. The mail comes
+       from Blue Radiance's own tenant, no third-party form service receives
+       the data, and nothing is stored anywhere.
+
+       Source: github.com/BLUE-RADIANCE-MARINE/br-contact-api
+       Notes:  .github/CONTACT-FORM.md
+
+       Until the URL is set the form falls back to opening the visitor's mail
+       app. That fallback does NOT deliver anything on its own; the visitor
+       still has to press Send.
+
+       The request is sent as text/plain so the browser treats it as a CORS
+       "simple request" and skips the OPTIONS preflight. The body is still
+       JSON; the function parses it either way.
+       ------------------------------------------------------------------ */
+    var ENDPOINT = 'https://br-contact-form.br-contact-form.workers.dev';
+    var INBOX    = 'operations@theblueradiance.com';
+
+    var val = function (name) {
+      var f = form.querySelector('[name="' + name + '"]');
+      return f ? f.value.trim() : '';
+    };
+    var buildSubject = function () {
+      return 'Website inquiry — ' + (val('service') || 'General') +
+             (val('company') ? ' — ' + val('company') : '');
+    };
+    var buildBody = function () {
+      return [
         'Inquiry submitted via theblueradiance.com',
         '',
         'Name:    ' + val('name'),
@@ -158,12 +176,95 @@
         'Requirement:',
         val('message')
       ].join('\n');
-      window.location.href = 'mailto:operations@theblueradiance.com' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      statusBox.className = 'form-status success';
-      statusBox.textContent = 'Your email app has opened with the inquiry pre-filled — press Send there to complete it. ' +
-        'If nothing opened, email us directly at operations@theblueradiance.com.';
+    };
+    var mailtoHref = function () {
+      return 'mailto:' + INBOX + '?subject=' + encodeURIComponent(buildSubject()) +
+             '&body=' + encodeURIComponent(buildBody());
+    };
+    var say = function (kind, html) {
+      statusBox.className = 'form-status ' + kind;
+      statusBox.innerHTML = html;
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) {
+        say('error', 'Please complete the highlighted fields before sending.');
+        return;
+      }
+
+      /* Honeypot — real people never fill this. A checkbox always reports
+         value "on", so it must be read via .checked, not .value. */
+      var trap = form.querySelector('[name="botcheck"]');
+      if (trap && (trap.type === 'checkbox' ? trap.checked : trap.value)) return;
+
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn ? btn.querySelector('span') : null;
+      var original = label ? label.textContent : '';
+
+      /* No endpoint configured yet — degrade, never break. */
+      if (!ENDPOINT) {
+        /* Show the message BEFORE attempting the mail app. Assigning a mailto
+           the browser cannot handle silently halts the rest of the handler,
+           which is why the old form appeared to do nothing at all. */
+        say('error',
+          'Please send your requirement to ' +
+          '<a href="mailto:' + INBOX + '">' + INBOX + '</a> or call ' +
+          '<a href="tel:+966136633697">+966 13 663 3697</a>. ' +
+          '<a href="' + mailtoHref() + '">Open a pre-filled email</a>.');
+        return;
+      }
+
+      if (btn) { btn.disabled = true; }
+      if (label) { label.textContent = 'Sending…'; }
+      say('', '');
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify({
+          subject: buildSubject(),
+          name: val('name'),
+          company: val('company') || '—',
+          email: val('email'),
+          phone: val('phone') || '—',
+          service: val('service'),
+          message: val('message'),
+          body: buildBody(),
+          page: window.location.href,
+          submitted: new Date().toISOString()
+        })
+      })
+      /* A Logic App Response action returning 200 with no body is a perfectly
+         good success signal, so fall back to the HTTP status when the body is
+         not JSON. */
+      .then(function (r) {
+        return r.json().then(
+          function (j) { return (j && typeof j.success !== 'undefined') ? j : { success: r.ok }; },
+          function () { return { success: r.ok }; }
+        );
+      })
+      .then(function (data) {
+        if (data && data.success) {
+          form.reset();
+          say('success',
+            'Thank you — your inquiry has been sent to our operations team. ' +
+            'We respond around the clock and will be in touch shortly.');
+        } else {
+          throw new Error((data && data.message) || 'Submission rejected');
+        }
+      })
+      .catch(function () {
+        say('error',
+          'We could not send that just now. Please email ' +
+          '<a href="mailto:' + INBOX + '">' + INBOX + '</a> or call ' +
+          '<a href="tel:+966136633697">+966 13 663 3697</a> — ' +
+          '<a href="' + mailtoHref() + '">open a pre-filled email</a>.');
+      })
+      .then(function () {
+        if (btn) { btn.disabled = false; }
+        if (label) { label.textContent = original; }
+      });
     });
 
     form.addEventListener('input', function (e) {
