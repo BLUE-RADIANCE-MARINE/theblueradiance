@@ -60,15 +60,23 @@
         text-transform:none;color:var(--text);line-height:1.35}
       .vform .cat-grid .chk input{width:auto;min-width:16px;height:16px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--azure)}
       .vform .consent input[type=checkbox]{width:auto;height:16px}
-      .vform input[type=file]{display:block;width:100%;font-size:.88rem;color:var(--muted);padding:9px 0}
-      .vform input[type=file]::file-selector-button{font:inherit;font-weight:600;margin-right:12px;padding:9px 16px;
-        border:1px solid var(--line);border-radius:8px;background:var(--paper-2);color:var(--navy);cursor:pointer}
+      .vform input[type=file]{display:block;width:100%;font-size:.9rem;color:var(--muted);
+        padding:10px 12px;border:1px solid var(--line);border-radius:2px;background:#fff;cursor:pointer}
+      .vform input[type=file]::file-selector-button{font:inherit;font-weight:600;font-size:.84rem;margin-right:14px;
+        padding:8px 16px;border:0;border-radius:4px;background:var(--navy);color:#fff;cursor:pointer;transition:background .25s ease}
+      .vform input[type=file]:hover::file-selector-button{background:var(--azure-ink)}
       .vform .consent{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--muted);line-height:1.45;margin:6px 0 20px}
       .vform .consent input{margin-top:3px;flex:0 0 auto;accent-color:var(--azure)}
-      .aside-note{font-size:.9rem;line-height:1.55;color:var(--text)}
-      .aside-note li{margin:0 0 12px;padding-left:26px;position:relative}
-      .aside-note li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;
-        border:2px solid var(--azure-text)}
+      .aside-note{font-size:.92rem;line-height:1.6;color:var(--muted)}
+      .flow-list{list-style:none;padding:0;margin:0}
+      .flow-list li{position:relative;padding-left:22px;margin:0 0 14px;color:var(--text);font-size:.92rem;line-height:1.55}
+      .flow-list li:last-child{margin-bottom:0}
+      .flow-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--azure)}
+      .contact-list{list-style:none;padding:0;margin:0}
+      .contact-list li{margin:0 0 10px;color:var(--text);font-size:.92rem}
+      .contact-list li:last-child{margin-bottom:0}
+      .contact-list a{color:var(--azure-text);text-decoration:none}
+      .contact-list a:hover{text-decoration:underline}
       .status-flow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
       .status-flow span{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
         padding:6px 12px;border-radius:999px;background:var(--paper-2);color:var(--navy);border:1px solid var(--line)}
@@ -320,6 +328,7 @@
                             <div class="field">
                                 <label for="v-doc-other">Other Supporting Documents</label>
                                 <input id="v-doc-other" name="doc_other" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
+                                <p class="hint">You may select multiple files.</p>
                             </div>
                         </fieldset>
 
@@ -346,7 +355,7 @@
                 <div>
                     <div class="card" style="margin-bottom:22px">
                         <p class="kicker" style="margin-bottom:14px">What happens next</p>
-                        <ul class="aside-note" style="list-style:none;padding:0;margin:0">
+                        <ul class="flow-list">
                             <li>Your application is received and marked <strong>Pending Review</strong>.</li>
                             <li>Blue Radiance reviews your company details and documents.</li>
                             <li>We may contact you for clarification or additional documents.</li>
@@ -355,13 +364,13 @@
                     </div>
                     <div class="card">
                         <p class="kicker" style="margin-bottom:14px">Vendor Desk</p>
-                        <p class="aside-note" style="margin:0 0 14px;color:#44505f">
+                        <p class="aside-note" style="margin:0 0 14px">
                             For questions about vendor registration, contact our procurement desk.
                         </p>
-                        <ul class="aside-note" style="list-style:none;padding:0;margin:0">
-                            <li style="padding-left:0"><a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a></li>
-                            <li style="padding-left:0"><a href="tel:+966136633697">+966 13 663 3697</a></li>
-                            <li style="padding-left:0">Al Khobar · Eastern Province · KSA</li>
+                        <ul class="contact-list">
+                            <li><a href="mailto:operations@theblueradiance.com">operations@theblueradiance.com</a></li>
+                            <li><a href="tel:+966136633697">+966 13 663 3697</a></li>
+                            <li>Al Khobar · Eastern Province · KSA</li>
                         </ul>
                     </div>
                 </div>
@@ -400,7 +409,7 @@
                         <li><a href="company-profile.html">Company Profile</a></li>
                         <li><a href="documents/Blue-Radiance-Marine-Company-Profile-2026.pdf" download>Download Profile (PDF)</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="vendor-registration.html">Vendor Registration</a></li>
+                    <li><a href="vendor-registration.html">Vendor Registration</a></li>
                     </ul>
                 </div>
                 <div class="foot-col">
