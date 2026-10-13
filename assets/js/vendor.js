@@ -45,6 +45,64 @@
     if (e.target && e.target.closest && e.target.closest('.field')) flag(e.target, false);
   });
 
+  /* Each file field shows the chosen file(s) with size + a per-file Remove (✕),
+     and a count for the multi-file fields. Selections accumulate so a vendor can
+     add files across several picks; removing rebuilds the input via DataTransfer. */
+  var fmtSize = function (b) {
+    return b < 1024 ? b + ' B' : b < 1048576 ? Math.round(b / 1024) + ' KB' : (b / 1048576).toFixed(1) + ' MB';
+  };
+  var canDT = (function () { try { new DataTransfer(); return true; } catch (e) { return false; } })();
+  Array.prototype.forEach.call(form.querySelectorAll('input[type="file"]'), function (inp) {
+    var multiple = inp.multiple;
+    var list = document.createElement('div');
+    list.className = 'file-list';
+    inp.parentNode.insertBefore(list, inp.nextSibling);
+    var store = [];
+    var apply = function () {
+      if (canDT) { var dt = new DataTransfer(); store.forEach(function (f) { dt.items.add(f); }); inp.files = dt.files; }
+      render();
+    };
+    var render = function () {
+      list.innerHTML = '';
+      var files = canDT ? store : Array.prototype.slice.call(inp.files || []);
+      if (!files.length) { list.classList.remove('has'); return; }
+      list.classList.add('has');
+      if (multiple) {
+        var h = document.createElement('div');
+        h.className = 'file-count';
+        h.textContent = files.length + (files.length > 1 ? ' files selected' : ' file selected');
+        list.appendChild(h);
+      }
+      files.forEach(function (f, i) {
+        var chip = document.createElement('div'); chip.className = 'file-chip';
+        var name = document.createElement('span'); name.className = 'fc-name';
+        name.textContent = f.name;
+        var sz = document.createElement('span'); sz.className = 'fc-size'; sz.textContent = fmtSize(f.size);
+        name.appendChild(sz); chip.appendChild(name);
+        var x = document.createElement('button');
+        x.type = 'button'; x.className = 'fc-x'; x.setAttribute('aria-label', 'Remove ' + f.name); x.textContent = '✕';
+        x.addEventListener('click', function () {
+          if (canDT) { store.splice(i, 1); apply(); }
+          else { inp.value = ''; render(); }
+          flag(inp, false);
+        });
+        chip.appendChild(x); list.appendChild(chip);
+      });
+    };
+    inp.addEventListener('change', function () {
+      var incoming = Array.prototype.slice.call(inp.files || []);
+      if (!canDT) { render(); return; }
+      if (multiple) {
+        incoming.forEach(function (f) {
+          if (!store.some(function (s) { return s.name === f.name && s.size === f.size && s.lastModified === f.lastModified; })) store.push(f);
+        });
+      } else {
+        store = incoming.slice(0, 1);
+      }
+      apply();
+    });
+  });
+
   function validate() {
     var firstBad = null;
     var fail = function (el) { flag(el, true); if (!firstBad) firstBad = el; };
