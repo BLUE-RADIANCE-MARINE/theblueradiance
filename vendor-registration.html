@@ -34,6 +34,7 @@
     <script>document.documentElement.className+=' js';</script>
     <link rel="stylesheet" href="assets/css/site.css">
     <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/forms-intl.js" defer></script>
     <script src="assets/js/vendor.js" defer></script>
     <script type="application/ld+json">
     {
@@ -60,6 +61,9 @@
         text-transform:none;color:var(--text);line-height:1.35}
       .vform .cat-grid .chk input{width:auto;min-width:16px;height:16px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--azure)}
       .vform .consent input[type=checkbox]{width:auto;height:16px}
+      .vform .phone-field{display:flex;gap:8px;align-items:stretch}
+      .vform .phone-field .phone-code{flex:0 0 132px;width:132px;min-width:0}
+      .vform .phone-field .phone-num{flex:1 1 auto;width:auto;min-width:0}
       .vform input[type=file]{display:block;width:100%;font-size:.9rem;color:var(--muted);
         padding:10px 12px;border:1px solid var(--line);border-radius:2px;background:#fff;cursor:pointer}
       .vform input[type=file]::file-selector-button{font:inherit;font-weight:600;font-size:.84rem;margin-right:14px;
@@ -233,8 +237,8 @@
                             <div class="form-row">
                                 <div class="field">
                                     <label for="v-country">Country *</label>
-                                    <input id="v-country" name="country" type="text" autocomplete="country-name" maxlength="80" required>
-                                    <span class="err">Please enter your country.</span>
+                                    <select id="v-country" name="country" data-country required></select>
+                                    <span class="err">Please select your country.</span>
                                 </div>
                                 <div class="field">
                                     <label for="v-city">City *</label>
@@ -272,9 +276,13 @@
                                     <span class="err">Please enter a valid email address.</span>
                                 </div>
                                 <div class="field">
-                                    <label for="v-phone">Phone *</label>
-                                    <input id="v-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" required>
-                                    <span class="err">Please enter a phone number.</span>
+                                    <label for="v-phone-num">Phone *</label>
+                                    <div class="phone-field" data-phone>
+                                        <select class="phone-code" aria-label="Country dialing code"></select>
+                                        <input id="v-phone-num" class="phone-num" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="5X XXX XXXX">
+                                        <input type="hidden" name="phone">
+                                    </div>
+                                    <span class="err">Please enter a valid phone number.</span>
                                 </div>
                             </div>
                         </fieldset>

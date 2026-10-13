@@ -108,7 +108,7 @@
     var fail = function (el) { flag(el, true); if (!firstBad) firstBad = el; };
 
     /* required text/select fields */
-    ['company_name', 'cr_number', 'country', 'city', 'contact_name', 'email', 'phone']
+    ['company_name', 'cr_number', 'country', 'city', 'contact_name', 'email']
       .forEach(function (n) {
         var el = form.elements[n];
         if (!el) return;
@@ -118,6 +118,14 @@
 
     var em = form.elements['email'];
     if (em && em.value.trim() && !emailOk(em.value.trim())) fail(em);
+
+    /* phone — validate the national number (6–15 digits), country code handled separately */
+    var pnum = form.querySelector('.phone-num');
+    if (pnum) {
+      var pd = (pnum.value || '').replace(/\D/g, '');
+      if (pd.length < 6 || pd.length > 15) fail(pnum);
+      else flag(pnum, false);
+    }
 
     /* at least one service category */
     var cats = form.querySelectorAll('input[name="categories"]:checked');
