@@ -969,3 +969,8 @@ footer.site-foot{background:var(--deep);color:#fff}
 .frame{overflow:hidden}
 .frame img{transition:transform 1.1s var(--ease)}
 .frame:hover img,a:hover > .frame img{transform:scale(1.06)}
+
+/* ---------- Shared: phone field (code + number) ---------- */
+.phone-field{display:flex;gap:8px;align-items:stretch}
+.phone-field .phone-code{flex:0 0 132px;width:132px;min-width:0}
+.phone-field .phone-num{flex:1 1 auto;width:auto;min-width:0}

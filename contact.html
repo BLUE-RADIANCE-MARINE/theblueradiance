@@ -34,6 +34,7 @@
     <script>document.documentElement.className+=' js';</script>
     <link rel="stylesheet" href="assets/css/site.css">
     <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/forms-intl.js" defer></script>
 
     <script type="application/ld+json">
     {
@@ -254,7 +255,11 @@
                             </div>
                             <div class="field">
                                 <label for="f-phone">Phone</label>
-                                <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                                <div class="phone-field" data-phone>
+                                    <select class="phone-code" aria-label="Country dialing code"></select>
+                                    <input id="f-phone" class="phone-num" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="5X XXX XXXX">
+                                    <input type="hidden" name="phone">
+                                </div>
                             </div>
                         </div>
                         <div class="field">
