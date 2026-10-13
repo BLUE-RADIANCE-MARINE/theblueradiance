@@ -466,7 +466,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;line-height:1.06;let
 .vmv-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(12,20,32,.09)}
 .vmv-card.is-feature{background:var(--ink);border-color:var(--ink);color:#fff}
 .vmv-card.is-feature p{color:var(--fog)}
-.vmv-card h3{font-size:1.24rem}
+.vmv-card h3{font-size:1.24rem;color:var(--text)}
+.vmv-card.is-feature h3{color:#fff}
 .vmv-card p{font-size:.98rem;line-height:1.74;color:var(--muted)}
 .vmv-icon{
   width:38px;height:38px;border-radius:2px;display:grid;place-items:center;
@@ -834,7 +835,7 @@ footer.site-foot{background:var(--deep);color:#fff}
   .on-dark .facet + .facet{border-top-color:var(--line-d)}
   .val-grid{grid-template-columns:repeat(2,1fr)}
   .vmv{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:minmax(0,1fr)}
   .region-layout{grid-template-columns:1fr;gap:34px}
   .profile-layout{grid-template-columns:1fr;gap:38px}
   .profile-cover{max-width:380px}
@@ -971,6 +972,12 @@ footer.site-foot{background:var(--deep);color:#fff}
 .frame:hover img,a:hover > .frame img{transform:scale(1.06)}
 
 /* ---------- Shared: phone field (code + number) ---------- */
-.phone-field{display:flex;gap:8px;align-items:stretch}
-.phone-field .phone-code{flex:0 0 132px;width:132px;min-width:0}
-.phone-field .phone-num{flex:1 1 auto;width:auto;min-width:0}
+.phone-field{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.phone-field .phone-code{flex:0 0 116px;width:116px;min-width:0}
+.phone-field .phone-num{flex:1 1 90px;width:auto;min-width:0}
+
+/* ---------- Mobile overflow guard ---------- */
+html,body{overflow-x:hidden;max-width:100%}
+.form-grid input,.form-grid select,.form-grid textarea{min-width:0;max-width:100%}
+.phone-field{min-width:0}
+.hero-media img,.cta-media img{max-width:100%}
