@@ -1,11 +1,11 @@
-/* Blue Radiance — shared form helpers: country dropdown + phone with dialing code.
+/* Blue Radiance, shared form helpers: country dropdown + phone with dialing code.
    Used by the Vendor Registration and Contact forms. No external dependencies.
    Enhance:  <select data-country>  and  <div data-phone> ... </div>
    Default country: Saudi Arabia. */
 (function () {
   'use strict';
 
-  /* name|ISO2|dialcode — comprehensive, Gulf/MENA/South-Asia first-class. */
+  /* name|ISO2|dialcode, comprehensive, Gulf/MENA/South-Asia first-class. */
   var RAW = [
     'Saudi Arabia|SA|966', 'United Arab Emirates|AE|971', 'Bahrain|BH|973', 'Kuwait|KW|965',
     'Oman|OM|968', 'Qatar|QA|974', 'Yemen|YE|967', 'Iraq|IQ|964', 'Jordan|JO|962',

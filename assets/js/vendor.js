@@ -1,8 +1,8 @@
-/* Blue Radiance — Vendor Registration form.
+/* Blue Radiance, Vendor Registration form.
    Self-contained; does not depend on or modify site.js.
    Submits a multipart application (fields + documents) to the vendor Worker.
    The Worker stores the record in Neon, the files in private object storage,
-   and emails operations@. Submission is an APPLICATION ONLY — never approval. */
+   and emails operations@. Submission is an APPLICATION ONLY, never approval. */
 (function () {
   'use strict';
 
@@ -119,7 +119,7 @@
     var em = form.elements['email'];
     if (em && em.value.trim() && !emailOk(em.value.trim())) fail(em);
 
-    /* phone — validate the national number (6–15 digits), country code handled separately */
+    /* phone, validate the national number (6–15 digits), country code handled separately */
     var pnum = form.querySelector('.phone-num');
     if (pnum) {
       var pd = (pnum.value || '').replace(/\D/g, '');
@@ -173,7 +173,7 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    /* Honeypot — real people never fill this hidden checkbox. */
+    /* Honeypot, real people never fill this hidden checkbox. */
     var trap = form.querySelector('[name="botcheck"]');
     if (trap && (trap.type === 'checkbox' ? trap.checked : trap.value)) return;
 

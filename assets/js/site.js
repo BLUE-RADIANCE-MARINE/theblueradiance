@@ -1,4 +1,4 @@
-/* Blue Radiance Marine Company — site interactions (no dependencies) */
+/* Blue Radiance Marine Company, site interactions (no dependencies) */
 (function () {
   'use strict';
 
@@ -160,17 +160,17 @@
       return f ? f.value.trim() : '';
     };
     var buildSubject = function () {
-      return 'Website inquiry — ' + (val('service') || 'General') +
-             (val('company') ? ' — ' + val('company') : '');
+      return 'Website inquiry, ' + (val('service') || 'General') +
+             (val('company') ? ', ' + val('company') : '');
     };
     var buildBody = function () {
       return [
         'Inquiry submitted via theblueradiance.com',
         '',
         'Name:    ' + val('name'),
-        'Company: ' + (val('company') || '—'),
+        'Company: ' + (val('company') || '-'),
         'Email:   ' + val('email'),
-        'Phone:   ' + (val('phone') || '—'),
+        'Phone:   ' + (val('phone') || '-'),
         'Service: ' + val('service'),
         '',
         'Requirement:',
@@ -193,7 +193,7 @@
         return;
       }
 
-      /* Honeypot — real people never fill this. A checkbox always reports
+      /* Honeypot, real people never fill this. A checkbox always reports
          value "on", so it must be read via .checked, not .value. */
       var trap = form.querySelector('[name="botcheck"]');
       if (trap && (trap.type === 'checkbox' ? trap.checked : trap.value)) return;
@@ -202,7 +202,7 @@
       var label = btn ? btn.querySelector('span') : null;
       var original = label ? label.textContent : '';
 
-      /* No endpoint configured yet — degrade, never break. */
+      /* No endpoint configured yet, degrade, never break. */
       if (!ENDPOINT) {
         /* Show the message BEFORE attempting the mail app. Assigning a mailto
            the browser cannot handle silently halts the rest of the handler,
@@ -225,9 +225,9 @@
         body: JSON.stringify({
           subject: buildSubject(),
           name: val('name'),
-          company: val('company') || '—',
+          company: val('company') || '-',
           email: val('email'),
-          phone: val('phone') || '—',
+          phone: val('phone') || '-',
           service: val('service'),
           message: val('message'),
           body: buildBody(),
@@ -248,7 +248,7 @@
         if (data && data.success) {
           form.reset();
           say('success',
-            'Thank you — your inquiry has been sent to our operations team. ' +
+            'Thank you, your inquiry has been sent to our operations team. ' +
             'We respond around the clock and will be in touch shortly.');
         } else {
           throw new Error((data && data.message) || 'Submission rejected');
@@ -258,7 +258,7 @@
         say('error',
           'We could not send that just now. Please email ' +
           '<a href="mailto:' + INBOX + '">' + INBOX + '</a> or call ' +
-          '<a href="tel:+966136633697">+966 13 663 3697</a> — ' +
+          '<a href="tel:+966136633697">+966 13 663 3697</a>, ' +
           '<a href="' + mailtoHref() + '">open a pre-filled email</a>.');
       })
       .then(function () {
