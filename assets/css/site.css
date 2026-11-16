@@ -981,3 +981,20 @@ html,body{overflow-x:hidden;max-width:100%}
 .form-grid input,.form-grid select,.form-grid textarea{min-width:0;max-width:100%}
 .phone-field{min-width:0}
 .hero-media img,.cta-media img{max-width:100%}
+
+/* ---- Certifications (About) ---- */
+.certs{margin-top:clamp(30px,4vw,48px);padding-top:26px;border-top:1px solid var(--line)}
+.certs-title{font-size:1.15rem;font-weight:600;color:var(--text);margin:0 0 8px}
+.certs-lede{color:var(--muted);font-size:.95rem;line-height:1.75;max-width:74ch;margin:0}
+.certs-mark{margin:22px 0;max-width:520px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.certs-mark img{display:block;width:100%;height:auto}
+.certs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cert-card{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.cert-std{font-weight:700;color:var(--navy);font-size:1rem}
+.cert-name{color:var(--text);font-size:.9rem;line-height:1.4}
+.cert-no{color:var(--muted);font-size:.82rem;margin-top:2px}
+.cert-link{margin-top:8px;color:var(--azure-text);font-size:.86rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.certs-scope{margin-top:16px;color:var(--muted);font-size:.86rem;line-height:1.7;max-width:80ch}
+.certs-scope strong{color:var(--text);font-weight:600}
+@media (max-width:760px){.certs-grid{grid-template-columns:minmax(0,1fr)}}
+.foot-iso{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
